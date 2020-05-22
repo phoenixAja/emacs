@@ -1,0 +1,16 @@
+import configparser
+
+
+class EnvInterpolation(configparser.BasicInterpolation):
+    """Interpolation which expands environment variables in values."""
+    
+    def before_get(self, parser, section, option, value, defaults):
+        L = []
+
+        # escape % for variables before interpolation
+        for k, v in defaults.items():
+            if "%" in v:
+                defaults[k] = v.replace("%", "%%")
+                
+        self._interpolate_some(parser, option, L, value, section, defaults, 1)
+        return ''.join(L)

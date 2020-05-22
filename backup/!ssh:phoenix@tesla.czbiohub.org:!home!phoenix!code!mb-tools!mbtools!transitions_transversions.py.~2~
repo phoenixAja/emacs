@@ -1,0 +1,68 @@
+import numpy as np
+import pandas as pd
+
+
+
+def transition_v_transversion(mut_df, metadata):
+    '''transition vs. transversions percentages by tissue'''
+    
+    mut_df.dropna(
+        axis=0,
+        subset=[
+            "alt_base",
+            "ref_base",
+            "mutation_id"
+        ],
+        inplace=True
+    )
+    
+    mut_no_star = mut_df.query("alt_base != '*'")
+
+    transitions_transversions = {
+        "A>T": "Transversion",
+        "A>G": "Transition",
+        "A>C": "Transversion",
+        "C>G": "Transversion",
+        "C>T": "Transition",
+        "G>T": "Transversion"
+    }
+
+    mut_plus_meta = mut_no_star.merge(
+            metadata, 
+            how="left", # get cell_ids that also are not in metadata and create "NA" category for tissue
+            on="cell_id",
+    )
+
+    mut_plus_meta["transition_type"] = mut_plus_meta.apply(
+        lambda row: "{}>{}".format(
+            *sorted([row['ref_base'], row['alt_base']])
+        ), 
+        axis=1
+    )
+
+    mut_plus_meta["transitions_v_transversions"] = mut_plus_meta.apply(
+        lambda row: transitions_transversions[row['transition_type']], 
+        axis=1
+    )
+
+    mut_type_by_tissue_transition_v_transversion = mut_plus_meta.groupby(
+        ["tissue", "transitions_v_transversions"]
+    ).count()[["cell_id"]]
+        
+    mut_type_by_tissue_transition_v_transversion_total_counts = mut_type_by_tissue_transition_v_transversion.groupby(
+        ['tissue']
+    ).sum()[["cell_id"]]
+
+    mut_type_by_tissue_transition_v_transversion_2 = mut_type_by_tissue_transition_v_transversion.reset_index().merge(
+        mut_type_by_tissue_transition_v_transversion_total_counts.reset_index(),
+        how="left",
+        on="tissue",
+        suffixes=('_by_type', '_total_count')
+    )
+
+    mut_type_by_tissue_transition_v_transversion_2["count_percentage"] = mut_type_by_tissue_transition_v_transversion_2.apply(
+        lambda row: row["cell_id_by_type"] / row["cell_id_total_count"],
+        axis=1
+    )
+    
+    return mut_type_by_tissue_transition_v_transversion_2

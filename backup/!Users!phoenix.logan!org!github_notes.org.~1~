@@ -1,0 +1,12 @@
+* Github Notes:
+
+*** To get the differences between upstream and fork origin:
+git diff @{upstream}
+
+<branchname>@{upstream}, e.g. master@{upstream}, @{u}
+The suffix @{upstream} to a branchname (short form <branchname>@{u}) refers to the branch that 
+the branch specified by branchname is set to build on top of (configured with branch.<name>.remote
+ and branch.<name>.merge). A missing branchname defaults to the current one.
+
+[[https://stackoverflow.com/questions/1800783/how-to-compare-a-local-git-branch-with-its-remote-branch][Stack Overflow source]]
+

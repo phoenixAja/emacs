@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load protocols_tags %}
+{% block content %}
+
+<h3>Protocol Detail</h3>
+<br>
+<p><b>Assay Name: </b>{{ object.assay_name }}</p>
+<p><b>Assay Description: </b>{{ object.assay_description }}</p>
+<p><b>Contact Name: </b>{{ object.contact_name }}</p>
+<p><b>Contact Email: </b>{{ object.contact_email }}</p>
+<p><b>date_added: </b>{{ object.date_added }}</p>
+<p><b>Data: </b><a href="{{ object.data.url }}">{{ object.data|filename }}</a></p>
+<br>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+# This is a combination of 19 commits.
+# This is the 1st commit message:
+
+added navbar, home, and login components. Setup JWT authentication.
+
+# This is the commit message #2:
+
+renamed views, reverted CustomUser to User
+
+# This is the commit message #3:
+
+stray custom users
+
+# This is the commit message #4:
+
+added comment on frontend urls
+
+# This is the commit message #5:
+
+add currentUser endpoint to get username for nav
+
+# This is the commit message #6:
+
+added blacklist comment to logout view
+
+# This is the commit message #7:
+
+added comment to models
+
+# This is the commit message #8:
+
+removed unused templates
+
+# This is the commit message #9:
+
+reverted settings
+
+# This is the commit message #10:
+
+settings with session auth
+
+# This is the commit message #11:
+
+original users app from dev
+
+# This is the commit message #12:
+
+original configs
+
+# This is the commit message #13:
+
+stripped out unused stuff
+
+# This is the commit message #14:
+
+added todo in app
+
+# This is the commit message #15:
+
+admin logout
+
+# This is the commit message #16:
+
+checked out base template from dev
+
+# This is the commit message #17:
+
+deleted user serializers
+
+# This is the commit message #18:
+
+fixed indentation, added TODOs
+
+# This is the commit message #19:
+
+added todo for disabling signInOutLinks
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon May 4 16:14:49 2020 -0700
+#
+# interactive rebase in progress; onto d81d1b4
+# Last commands done (19 commands done):
+#    squash f11be77 fixed indentation, added TODOs
+#    squash a40598d added todo for disabling signInOutLinks
+# No commands remaining.
+# You are currently rebasing branch 'nav-component' on 'd81d1b4'.
+#
+# Changes to be committed:
+#	modified:   covid19_serology_portal/frontend/src/components/App.js
+#	new file:   covid19_serology_portal/frontend/src/components/layout/Home.js
+#	modified:   covid19_serology_portal/frontend/src/components/layout/Navbar.js
+#	modified:   covid19_serology_portal/frontend/urls.py
+#	modified:   covid19_serology_portal/frontend/views.py
+#	deleted:    covid19_serology_portal/templates/protocols/protocol_delete_form.html
+#	deleted:    covid19_serology_portal/templates/protocols/protocol_detail.html
+#	deleted:    covid19_serology_portal/templates/protocols/protocol_form.html
+#	deleted:    covid19_serology_portal/templates/protocols/protocol_list.html
+#	modified:   package-lock.json
+#	modified:   package.json
+#	modified:   webpack.config.js
+#
+# Untracked files:
+#	.idea/
+#

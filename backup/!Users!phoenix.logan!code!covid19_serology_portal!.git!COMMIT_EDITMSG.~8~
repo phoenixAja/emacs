@@ -1,0 +1,25 @@
+# This is a combination of 2 commits.
+# This is the 1st commit message:
+
+playing with div positioning
+
+# This is the commit message #2:
+
+removed unused styling
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Fri May 15 09:51:57 2020 -0700
+#
+# interactive rebase in progress; onto 2469a85
+# Last commands done (2 commands done):
+#    pick 91dafb9 playing with div positioning
+#    squash fedded2 removed unused styling
+# No commands remaining.
+# You are currently rebasing branch 'asymmetric-edge' on '2469a85'.
+#
+# Changes to be committed:
+#	modified:   covid19_serology_portal/frontend/src/components/layout/Banner.js
+#	modified:   covid19_serology_portal/frontend/src/components/layout/banner.scss
+#

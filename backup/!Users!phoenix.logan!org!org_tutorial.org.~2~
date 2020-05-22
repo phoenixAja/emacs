@@ -1,0 +1,41 @@
+* Tasks
+** DONE Start new org mode file
+   CLOSED: [2020-01-08 Wed 14:17]
+** DONE Outline Document
+   CLOSED: [2020-01-08 Wed 14:23]
+** TODO Write Introduction
+** TODO Finish Document
+   SCHEDULED: <2020-01-09 Thu>
+
+* Introduction
+I am following the guide from [[https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html][orgmode tutorial]] and [[http://pragmaticemacs.com/emacs/org-mode-basics-vi-a-simple-todo-list/][this todo list tutorial]] Here is the link to [[file:~/.emacs.d/init.el::;;%20init.el%20---%20Emacs%20configuration][my init.el]] for easy editing in the future.
+
+* Key Bindings
+** C-c C-t : org-todo (marks tasks as done)
+** M-shift-RET : org-insert-todo-heading
+** C-c C-o : open-org-at-point (open link)
+** C-c l : org store link (go to file you want to link to and then enter this)
+** C-c C-l : org-insert-link (insert link from local files)
+** shift-TAB : collapse document for easy navigation, also use to un-collapse document
+** C-c a t : enter a global todo list 
+*** t : to mark an item DONE
+*** RET : jump to source file with task) 
+** C-c a a : runs org-agenda (a display of this weeks scheduled items)
+*** l : turn on log display
+
+C-c C-s : runs org-schedule which brings up a calendar view to schedule tasks (adds SCHEDULED)
+
+* Syntax
+[[][]] insert link, then description
+
+** Obtaining org mode
+** Installation 
+** Configuration
+* The Basics
+** Creating New File
+** Simple Task List
+** Using Headlines to structure a document.
+** Links to other places
+** Adding Notes to a task
+** Scheduling an appt.
+** Using the agenda

@@ -1,0 +1,28 @@
+from io import StringIO
+from datetime import datetime
+
+import boto3
+import pandas as pd
+
+
+def upload_worksheet_to_s3(worksheet, bucket, gc):
+    s3 = boto3.resource('s3')
+    form_data = gc.open(worksheet)
+    d = datetime.today()
+    parent_dir = d.strftime("%d-%B-%Y %H:%M:%S")
+    for w in form_data.worksheets():
+        all_vals = w.get_all_values()
+        df = pd.DataFrame(
+            all_vals[1:], 
+            columns=all_vals[0]
+        )
+        csv_buffer = StringIO()
+        df.to_csv(csv_buffer)
+        d = datetime.today()
+        s3.Object(
+            bucket, 
+            os.path.join(
+                parent_dir, f'{w.title}.csv')
+        ).put(
+            Body=csv_buffer.getvalue()
+        )

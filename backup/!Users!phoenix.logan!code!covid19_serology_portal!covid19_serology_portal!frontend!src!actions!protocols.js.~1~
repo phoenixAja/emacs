@@ -1,0 +1,13 @@
+// actions/todos.js
+
+import axios from 'axios';
+import { GET_PROTOCOLS } from './types';
+
+// GET PROTOCOLS
+export const getProtocols = () => async dispatch => {
+  const res = await axios.get('/api/todos/');
+  dispatch({
+    type: GET_PROTOCOLS,
+    payload: res.data
+  });
+};

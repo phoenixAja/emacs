@@ -1,0 +1,10 @@
+timezone = America/Los Angeles
+GDRIVE_PATH= os.environ.get("GDRIVE_PATH")
+MASTER_SPREADSHEET = os.environ.get("MASTER_SPREAD_SHEET")
+GOOGLE_DRIVE_CREDS = os.environ.get("GOOGLE_DRIVE_CREDS")
+
+
+s3_backups_bucket = 'covid-19-backups'
+form_data = "Covid-19 Collective Form (Responses)"
+bravo_pcr_worsheet = "Bravo PCR aliquoting"
+bravo_rna_worksheet = "Bravo RNA extractions"

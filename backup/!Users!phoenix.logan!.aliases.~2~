@@ -1,0 +1,5 @@
+alias lrrr='ssh phoenix@lrrr'
+alias hulk='ssh phoenix@hulk'
+alias ndnd='ssh phoenix@ndnd'
+alias tesla='ssh phoenix@tesla.czbiohub.org'
+alias lrrrjuprun='ssh -N -f -L localhost:8888:localhost:8888 phoenix@lrrr'

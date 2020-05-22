@@ -1,0 +1,7 @@
+GENERAL:
+  DJANGO_READ_DOT_ENV_FILE: False
+  DJANGO_SETTINGS_MODULE: config.settings.production
+  DJANGO_ACCOUNT_ALLOW_REGISTRATION: True
+  DJANGO_DEBUG: True
+  TIME_ZONE: America/Los_Angeles
+  LANGUAGE_CODE: en-us

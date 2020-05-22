@@ -1,0 +1,74 @@
+import React, { Component } from "react";
+
+import {
+  BiohubUI,
+  PageTitle,
+  AppBar,
+  Button,
+  NavBar,
+  Link as CZUILink,
+} from "cz-ui";
+
+class NavBarPortal extends Component {
+  render() {
+    <NavBar
+      accent
+      title={"Covid19 Response"}
+      username={" "}
+      navLinks={[
+        <CZUILink
+          component={Link}
+          to="/"
+          onClick={() => this.setState({ selectedIndex: 0 })}
+        >
+          COVID19 RESPONSE
+        </CZUILink>,
+        <CZUILink
+          component={Link}
+          to="/consortium"
+          onClick={() => this.setState({ selectedIndex: 1 })}
+        >
+          CONSORTIUM
+        </CZUILink>,
+        <CZUILink
+          component={Link}
+          to="/publications"
+          onClick={() => this.setState({ selectedIndex: 2 })}
+        >
+          PUBLICATIONS
+        </CZUILink>,
+        <CZUILink
+          component={Link}
+          to="/cliahub"
+          onClick={() => this.setState({ selectedIndex: 3 })}
+        >
+          CLIAHUB
+        </CZUILink>,
+        <CZUILink
+          component={Link}
+          to="/mNGS"
+          onClick={() => this.setState({ selectedIndex: 4 })}
+        >
+          SEQUENCING
+        </CZUILink>,
+        <CZUILink
+          component={Link}
+          to="/serology"
+          onClick={() => this.setState({ selectedIndex: 5 })}
+        >
+          SEROLOGY
+        </CZUILink>,
+        // <CZUILink
+        //   component={Link}
+        //   to="/"
+        //   onClick={() => this.setState()}
+        // ></CZUILink>,
+      ]}
+      navSelectedLinkIndex={this.state.selectedIndex}
+      signInLink={<CZUILink href="#signin">Sign In</CZUILink>}
+      signOutLink={<CZUILink href="#signout">Sign Out</CZUILink>}
+    />
+  }
+}
+
+export default NavBarPortal;

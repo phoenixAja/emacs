@@ -1,0 +1,45 @@
+pick 3b19d0c added navbar, home, and login components. Setup JWT authentication.
+pick b8a863c renamed views, reverted CustomUser to User
+pick 753ec4d stray custom users
+pick 7e52555 added comment on frontend urls
+pick 50807a8 add currentUser endpoint to get username for nav
+pick 40c0af5 added blacklist comment to logout view
+pick e042747 added comment to models
+pick 07fdc79 removed unused templates
+pick b9c57f3 reverted settings
+pick 76e1bef settings with session auth
+pick 4652924 original users app from dev
+pick 258ade5 original configs
+pick 4858227 stripped out unused stuff
+pick 84ef37c added todo in app
+pick dda3a5f admin logout
+pick cdac378 checked out base template from dev
+pick ca32afb deleted user serializers
+pick f11be77 fixed indentation, added TODOs
+pick a40598d added todo for disabling signInOutLinks
+
+# Rebase d81d1b4..a40598d onto d81d1b4 (19 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out

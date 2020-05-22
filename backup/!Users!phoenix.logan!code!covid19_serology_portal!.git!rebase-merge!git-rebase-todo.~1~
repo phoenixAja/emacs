@@ -1,0 +1,43 @@
+pick c41ec2a added viral background image
+pick 3375d6d package.json and webpack config
+pick f366d88 added css/sass loader packages to package.json
+pick 717d7cb modified webpack config for sass loaders
+pick 20ff14c webpack file with sass loader
+pick b0bdc43 webpack config with css/sass loaders working
+pick a52cfc7 trying to import scss
+pick 5c78a4b Delete project.css
+pick 7be6ce9 package lock
+pick 0986eee new dependency versions
+pick 4ff5663 mincss plugin dependency
+pick 53a7215 added in Marks component/styling
+pick ac754a4 small changes
+pick 9f1295b fixed styling imports
+pick 1bfa2d3 img loader
+pick 6e91e60 background image display with text decoration
+pick 2060999 final tweaks
+
+# Rebase 41f0b81..2060999 onto 41f0b81 (17 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out

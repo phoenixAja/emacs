@@ -1,0 +1,7 @@
+// actions/types.js
+
+export const GET_PROTOCOLS = 'GET_PROTOCOLS';
+export const GET_PROTOCOL = 'GET_PROTOCOL';
+export const ADD_PROTOCOL = 'ADD_PROTOCOL';
+export const DELETE_PROTOCOL = 'DELETE_PROTOCOL';
+export const EDIT_PROTOCOL = 'EDIT_PROTOCOL';

@@ -1,0 +1,18 @@
+from django.shortcuts import render
+from django.views.generic.detail import DetailView
+from django.views.generic import TemplateView
+
+from covid19_serology_portal.protocols.models import Protocol
+
+
+# class IndexView(TemplateView):
+#     template_name = "frontend/index.html"
+
+
+def index(request):
+    return render(request, 'pages/index.html')
+    
+
+class ProtocolDetail(DetailView):
+    model = Protocol
+    template_name = 'pages/index.html'

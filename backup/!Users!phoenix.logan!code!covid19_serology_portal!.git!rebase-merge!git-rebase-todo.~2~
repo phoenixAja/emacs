@@ -1,0 +1,45 @@
+pick 9d8aa07 index.html
+pick 7b6998d added async functionality
+pick b4009ef jwt config in settings
+pick c303225 users authentication/view changes with jwt
+pick e06ed74 new components for signup/login, still need to integrate in with navbar
+pick 75d289c frontend views and axios js
+pick cc9cf23 removing stale stuff from templates
+pick e761d4d Home component
+pick 8447933 got navbar working with uername
+pick 0b26a85 button links for logout
+pick 980e827 removed ununsed method
+pick 3ffd32c no more then
+pick 812b756 clear form values after submission
+pick 4805b02 added history for url pushing
+pick 4815298 setstate of username after logout
+pick 94474dd removed test view
+pick ccb9f04 adding comments
+pick 6c56fae removed old files
+pick 7c83020 removed signup
+
+# Rebase ad6d713..7c83020 onto ad6d713 (19 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out

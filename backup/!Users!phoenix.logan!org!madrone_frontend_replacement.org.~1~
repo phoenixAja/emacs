@@ -1,0 +1,48 @@
+* Madrone Front End Replacement Options
+
+** Nextstrain/Auspice
+*** General:
+- Written with Node and React
+
+*** Pros:
+- visualizations look nice and modern. 
+- can add our own visualizations if needed.
+- can host locally
+*** Cons:
+- Doesn't seem to be designed to be customized.
+- How would we handle middleware such as authentication?
+- We may need to maintain a fork of it if we are using it outside of main usecase.
+
+
+** Pathoenwatch/Microreact
+- looks like it's intended to be an upload your data sort of thing, cant find anything about hosting it 
+locally or the repo. Maybe we can use the api to submit data (returns temp url)
+*** Pros:
+- lucy said that the developers are interested in collaboration? 
+*** Cons:
+- Visualizations look more dated.
+- Can't find repo, is this opensource?
+
+
+* Issues with current front end:
+- not modern (not as sleek as competitors)
+- missing features (searching/narrowing results, login)
+- not intuitive user interface
+- navbar/basics
+
+* UX Improvements Needed
+- large trees
+- focus on clusters and not heatmap / tabbed view
+- not able to handle large trees
+
+* Development 
+- no one here is a javascript engineer
+- whatever we do to improve front end should be limited
+
+* TODOS:
+- email trevor about packaging components
+
+* What we need:
+- customizablility, we need to be able to add in changes asked for by ACDPH
+- Roughly a similar state to what the current site is. 
+

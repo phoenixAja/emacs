@@ -1,0 +1,122 @@
+# This is a combination of 20 commits.
+# This is the 1st commit message:
+
+moved control wells to new branch
+
+# This is the commit message #2:
+
+initial control wells files
+
+# This is the commit message #3:
+
+added control wells folder to config
+
+# This is the commit message #4:
+
+control wells test data
+
+# This is the commit message #5:
+
+control wells extra options
+
+# This is the commit message #6:
+
+chnaged layouts folder
+
+# This is the commit message #7:
+
+removed param for process_welllit
+
+# This is the commit message #8:
+
+stood up conftest control layouts dir
+
+# This is the commit message #9:
+
+removed unused class
+
+# This is the commit message #10:
+
+changed config naming
+
+# This is the commit message #11:
+
+control wells tweak
+
+# This is the commit message #12:
+
+conftest update
+
+# This is the commit message #13:
+
+changed arg name
+
+# This is the commit message #14:
+
+control wells file for actual run
+
+# This is the commit message #15:
+
+updated comment
+
+# This is the commit message #16:
+
+updated test-local
+
+# This is the commit message #17:
+
+changed layout arg name
+
+# This is the commit message #18:
+
+added local run test with filepath
+
+# This is the commit message #19:
+
+makefile with integration test
+
+# This is the commit message #20:
+
+more example files
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon Apr 6 16:37:25 2020 -0700
+#
+# interactive rebase in progress; onto 087e214
+# Last commands done (20 commands done):
+#    squash 265b28e makefile with integration test
+#    squash 44e28f8 more example files
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/custom-control-wells' on '087e214'.
+#
+# Changes to be committed:
+#	modified:   Makefile
+#	modified:   code/qpcr_processing/__main__.py
+#	modified:   code/qpcr_processing/accession.py
+#	modified:   code/qpcr_processing/config.py
+#	modified:   code/qpcr_processing/config.yaml
+#	modified:   code/qpcr_processing/conftest.py
+#	new file:   code/qpcr_processing/control_wells.py
+#	modified:   code/qpcr_processing/processing.py
+#	new file:   code/qpcr_processing/test/data/SP000016_controls.csv
+#	new file:   code/qpcr_processing/test/data/custom_control_wells.csv
+#	modified:   code/qpcr_processing/test/test_accession.py
+#	new file:   code/qpcr_processing/test/test_control_wells.py
+#	new file:   example_files/20200331-161533_SP000016_tube_to_plate - Sara Vazquez.csv
+#	new file:   example_files/D044581 -  Quantification Amplification Results_Cy5.csv
+#	new file:   example_files/D044581 -  Quantification Amplification Results_FAM.csv
+#	new file:   example_files/D044581 -  Quantification Amplification Results_HEX.csv
+#	new file:   example_files/D044581 -  Quantification Cq Results.csv
+#	new file:   example_files/D044581 - Run Information.csv
+#	new file:   example_files/SP000016_controls.csv
+#
+# Untracked files:
+#	Makefile.zip
+#	example_files/SP000001-D041758_final.pdf
+#	example_files/SP000016-D044581_final.pdf
+#	lambda/
+#	qpcr_processing/
+#	requirements.txt
+#

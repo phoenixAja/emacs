@@ -1,0 +1,17 @@
+from rest_framework import serializers
+
+from covid19_serology_portal.protocols.models import Protocol
+
+
+class ProtocolSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Protocol
+        fields = [
+            "protocol_name",
+            "protocol_description",
+            "assay_type",
+            "assay_format",
+            "contact_name",
+            "contact_email",
+            "protocol_pdf",
+        ]

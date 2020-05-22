@@ -1,0 +1,13 @@
+import React from 'react';
+import { Container } from '@material-ui/core';
+
+
+const Banner = function() {
+    return (
+	<Container></Container>
+	
+    );
+
+};
+
+return default Banner;

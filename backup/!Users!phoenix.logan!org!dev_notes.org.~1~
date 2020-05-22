@@ -1,0 +1,12 @@
+* Dev Notes:
+
+
+** conda/ virtual env notes:
+
+*** to add conda env kernal to jupyter:
+#+BUGIN_SRC bash
+$ conda activate cenv
+(cenv)$ conda install ipykernel
+(cenv)$ ipython kernel install --user --name=<any_name_for_kernel>
+(cenv($ conda deactivate
+#+END_SRC

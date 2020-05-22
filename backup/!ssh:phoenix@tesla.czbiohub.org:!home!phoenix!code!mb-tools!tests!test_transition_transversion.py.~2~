@@ -1,0 +1,25 @@
+import pytest
+
+from mbtools.transitions_transversions import transition_v_transversion
+
+
+
+def test_transition_v_transversion(
+        test_metadata_input,
+        test_mutations_input,
+        transition_v_transversion_correct
+):
+    results = transition_v_transversion(test_mutations_input, test_metadata_input)
+    assert results.equals(transition_v_transversion_correct)
+
+
+
+def test_transition_v_transversion_with_alt_star(
+        test_metadata_input,
+        test_mutations_input,
+        transition_v_transversion_alt_star_correct
+):
+    results = transition_v_transversion(test_mutations_input, test_metadata_input)
+    assert results.equals(transition_v_transversion_alt_star_correct)
+    
+    

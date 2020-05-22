@@ -1,0 +1,35 @@
+# General
+# ------------------------------------------------------------------------------
+# DJANGO_READ_DOT_ENV_FILE=True
+DJANGO_SETTINGS_MODULE=config.settings.production
+DJANGO_SECRET_KEY=DfOtO7FPCbs4Et6njJikbA6id71qpJrdxpi6om6yT4QJLKqBiSZvum2tmlNo0g2R
+DJANGO_ADMIN_URL=39RXly8Th7JO7AqUhccxvic4o7JBY2Mw/
+DJANGO_ALLOWED_HOSTS=.serology.czbiohub.org
+
+# Security
+# ------------------------------------------------------------------------------
+# TIP: better off using DNS, however, redirect is OK too
+DJANGO_SECURE_SSL_REDIRECT=False
+
+# Email
+# ------------------------------------------------------------------------------
+# DJANGO_SERVER_EMAIL=
+
+
+# AWS
+# ------------------------------------------------------------------------------
+DJANGO_AWS_STORAGE_BUCKET_NAME=covid19-serology-portal
+
+# django-allauth
+# ------------------------------------------------------------------------------
+DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
+
+# Gunicorn
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4
+
+
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+

@@ -1,0 +1,27 @@
+# This is a combination of 2 commits.
+# This is the 1st commit message:
+
+updated cz-ui to new name and version
+
+# This is the commit message #2:
+
+removed unused links
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu May 14 10:12:01 2020 -0700
+#
+# interactive rebase in progress; onto db6f41a
+# Last commands done (2 commands done):
+#    pick e1418cb updated cz-ui to new name and version
+#    squash 157bde5 removed unused links
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/update-cz-ui' on 'db6f41a'.
+#
+# Changes to be committed:
+#	modified:   covid19_serology_portal/frontend/src/components/App.js
+#	modified:   covid19_serology_portal/frontend/src/components/layout/Navbar.js
+#	modified:   package-lock.json
+#	modified:   package.json
+#

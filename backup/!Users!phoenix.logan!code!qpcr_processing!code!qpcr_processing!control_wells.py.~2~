@@ -1,0 +1,69 @@
+
+import csv
+
+
+class ControlWells:
+    def __init__(self, sample_plate_barcode, mapping_fp=None):
+        self.sample_plate_barcode = sample_plate_barcode
+        self.mapping_fp = mapping_fp
+        self.mapping = self._get_mapping()
+
+    def _get_mapping(self):
+        """get control wells for validation or for standard run"""
+
+        if self.mapping_fp:
+            return CustomControlWells(self.mapping_fp).mapping
+        elif self.sample_plate_barcode.startswith("V", 0, 1):
+            return ValidationControlWells().mapping
+        else:
+            # assume if barcode starts with anything other than V
+            # and no custom mapping specified then return StandardMapping
+            return StandardControlWells().mapping
+
+
+class CustomControlWells:
+    def __init__(self, mapping_fp):
+        self.mapping_fp = mapping_fp
+
+    @property
+    def mapping(self):
+        with open(self.mapping_fp) as csvfile:
+            return {k.strip(): v.strip() for k, v in csv.reader(csvfile, delimiter=",")}
+
+
+class ValidationControlWells:
+    mapping = {
+        "A1": "Water",
+        "B1": "Water",
+        "C1": "Water",
+        "D1": "Water",
+        "E1": "Water",
+        "F1": "Water",
+        "G1": "Water",
+        "H1": "Water",
+        "A12": "Water",
+        "B12": "Water",
+        "C12": "Water",
+        "D12": "Water",
+        "E12": "Water",
+        "F12": "Water",
+        "G12": "Water",
+        "H12": "Water",
+    }
+
+
+class StandardControlWells:
+    mapping = {
+        "A1": "Water",
+        "A11": "Water",
+        "A12": "Water",
+        "H1": "Water",
+        "H11": "Water",
+        "H12": "Water",
+        "A8": "PC",
+        "H8": "PC",
+        "A9": "HSC",
+        "H9": "HSC",
+        "A10": "UTM",
+        "H10": "UTM",
+    }

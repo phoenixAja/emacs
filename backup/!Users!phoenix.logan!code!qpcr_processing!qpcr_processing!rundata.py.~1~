@@ -1,0 +1,19 @@
+import pandas as pd
+
+
+class RunData:
+    
+    def __init__(self, rundata, quantification):
+        self._rundata = rundata
+        self.quantification = quantification
+        
+    @property
+    def rundata(self):
+        # return rundata as dictionary
+        self._rundata.columns = ["field_name", "value"]
+        return self._rundata.set_index(
+            "field_name", drop=True
+        ).to_dict()["value"]
+
+
+rd = RunData(run_data, quantification)

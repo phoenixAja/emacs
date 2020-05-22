@@ -1,0 +1,22 @@
+import pandas as pd
+
+
+def concat_coverage(coverage_files):
+    # concat all coverage data
+    return pd.concat(
+        coverage_files,
+        ignore_index=True
+    )
+
+
+def break_down_by_ontology(tissue, coverage, metadata):
+    all_cov_plus_meta = coverage.merge(
+        metadata,
+        on="cell_id",
+        how="left"
+
+    )
+    counts_by_tissue =  all_cov_plus_meta.query(f"tissue == '{tissue}'")
+    return counts_by_tissue.groupby(
+        ["tissue", "cell_ontology_class", "age"]
+    ).count()

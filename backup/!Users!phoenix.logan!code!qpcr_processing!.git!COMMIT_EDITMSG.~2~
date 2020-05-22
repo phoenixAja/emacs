@@ -1,0 +1,63 @@
+# This is a combination of 9 commits.
+# This is the 1st commit message:
+
+rclone backup for qpcr data
+
+# This is the commit message #2:
+
+qpcr backup call to process
+
+# This is the commit message #3:
+
+form_data folder on S3 for additional organization
+
+# This is the commit message #4:
+
+lambda directives for backup or process
+
+# This is the commit message #5:
+
+seperate lambda directive
+
+# This is the commit message #6:
+
+backups command in make
+
+# This is the commit message #7:
+
+fixed inputs
+
+# This is the commit message #8:
+
+suggestions
+
+# This is the commit message #9:
+
+removed qpcr backup
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed Mar 18 11:08:55 2020 -0700
+#
+# interactive rebase in progress; onto 2411be5
+# Last commands done (9 commands done):
+#    squash 7c56e2e suggestions
+#    squash 7416712 removed qpcr backup
+# Next commands to do (5 remaining commands):
+#    pick 44e21ee removed skip backups flag
+#    pick 86a1c6a lambda deploy for backups in make
+# You are currently rebasing branch 'phoenix/backups' on '2411be5'.
+#
+# Changes to be committed:
+#	modified:   Makefile
+#	modified:   qpcr_processing/backup.py
+#	modified:   qpcr_processing/google_utils.py
+#	modified:   qpcr_processing/processing.py
+#
+# Untracked files:
+#	.DS_Store
+#	lambda_function.zip
+#	qpcr_processing/Untitled.ipynb
+#	requirements.txt
+#

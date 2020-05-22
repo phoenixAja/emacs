@@ -1,0 +1,8 @@
+from django.urls import path
+
+from covid19_serology_portal.frontend import ProtocolDetail
+
+
+urlpatterns = [
+    path('edit/<int:pk>', ProtocolDetail.as_view())
+]

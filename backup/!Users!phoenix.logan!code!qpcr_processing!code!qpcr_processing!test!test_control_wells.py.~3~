@@ -1,0 +1,37 @@
+import pytest
+from qpcr_processing.control_wells import ControlWells, ProcessingFrom
+
+
+def test_custom_control_wells(custom_control_wells_fp, sample_plate_barcode):
+
+    control_wells = ControlWells(
+        processing_from=ProcessingFrom.local,
+        sample_plate_barcode=sample_plate_barcode,
+        mapping_fp=custom_control_wells_fp,
+    )
+    expected_mapping = {"A1": "Water", "A11": "Water", "A8": "PC", "H9": "HSC"}
+
+    assert control_wells.mapping == expected_mapping
+
+
+def test_standard_control_wells(sample_plate_barcode):
+
+    control_wells = ControlWells(
+        processing_from=ProcessingFrom.local, sample_plate_barcode=sample_plate_barcode
+    )
+    expected_mapping = {
+        "A1": "Water",
+        "A11": "Water",
+        "A12": "Water",
+        "H1": "Water",
+        "H11": "Water",
+        "H12": "Water",
+        "A8": "PC",
+        "H8": "PC",
+        "A9": "HSC",
+        "H9": "HSC",
+        "A10": "UTM",
+        "H10": "UTM",
+    }
+
+    assert control_wells.mapping == expected_mapping

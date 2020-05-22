@@ -1,0 +1,342 @@
+# This is a combination of 73 commits.
+# This is the 1st commit message:
+
+added comments
+
+# This is the commit message #2:
+
+rundata class
+
+# This is the commit message #3:
+
+removed unused param
+
+# This is the commit message #4:
+
+quantification amplification class
+
+# This is the commit message #5:
+
+args as filepath
+
+# This is the commit message #6:
+
+added ct curves pdf
+
+# This is the commit message #7:
+
+changed im size for ct curves
+
+# This is the commit message #8:
+
+* resized ct curves image and centered on page
+* added well and column names to axes labels
+
+# This is the commit message #9:
+
+recentered image
+
+# This is the commit message #10:
+
+clean static method
+
+# This is the commit message #11:
+
+linting
+
+# This is the commit message #12:
+
+watching new logs folder
+
+# This is the commit message #13:
+
+added qpcr Raw data class to metadata
+
+# This is the commit message #14:
+
+modified get_barcode to take in logs style filename
+
+# This is the commit message #15:
+
+changed local processing to handle new file types
+
+# This is the commit message #16:
+
+local processing tweaks
+
+# This is the commit message #17:
+
+changed plate layout folder
+
+# This is the commit message #18:
+
+tweaks
+
+# This is the commit message #19:
+
+removed file
+
+# This is the commit message #20:
+
+new makefile command for run local
+
+# This is the commit message #21:
+
+new sample files
+
+# This is the commit message #22:
+
+moved plate utility specific functions to thier own file
+
+# This is the commit message #23:
+
+ct curves for all prototypes
+
+# This is the commit message #24:
+
+tweaks
+
+# This is the commit message #25:
+
+debugging run local
+
+# This is the commit message #26:
+
+example well lit
+
+# This is the commit message #27:
+
+passing local run with multiple quant amp reports
+
+# This is the commit message #28:
+
+testing gdrive
+
+# This is the commit message #29:
+
+tweaks
+
+# This is the commit message #30:
+
+reset gdrive
+
+# This is the commit message #31:
+
+fix to items()
+
+# This is the commit message #32:
+
+tweaks
+
+# This is the commit message #33:
+
+remove print
+
+# This is the commit message #34:
+
+matplotlib in setup
+
+# This is the commit message #35:
+
+make changes
+
+# This is the commit message #36:
+
+makefile typo
+
+# This is the commit message #37:
+
+makefile gdrive changes
+
+# This is the commit message #38:
+
+revert no-op changes (#105)
+
+# This is the commit message #39:
+
+make change for reset gdrive test logs (still broken))
+
+# This is the commit message #40:
+
+adding protocols to yamal
+
+# This is the commit message #41:
+
+added comments
+
+# This is the commit message #42:
+
+rundata class
+
+# This is the commit message #43:
+
+removed unused param
+
+# This is the commit message #44:
+
+quantification amplification class
+
+# This is the commit message #45:
+
+added ct curves pdf
+
+# This is the commit message #46:
+
+changed im size for ct curves
+
+# This is the commit message #47:
+
+* resized ct curves image and centered on page
+* added well and column names to axes labels
+
+# This is the commit message #48:
+
+clean static method
+
+# This is the commit message #49:
+
+linting
+
+# This is the commit message #50:
+
+watching new logs folder
+
+# This is the commit message #51:
+
+added qpcr Raw data class to metadata
+
+# This is the commit message #52:
+
+modified get_barcode to take in logs style filename
+
+# This is the commit message #53:
+
+changed local processing to handle new file types
+
+# This is the commit message #54:
+
+local processing tweaks
+
+# This is the commit message #55:
+
+changed plate layout folder
+
+# This is the commit message #56:
+
+tweaks
+
+# This is the commit message #57:
+
+removed file
+
+# This is the commit message #58:
+
+new makefile command for run local
+
+# This is the commit message #59:
+
+ct curves for all prototypes
+
+# This is the commit message #60:
+
+tweaks
+
+# This is the commit message #61:
+
+debugging run local
+
+# This is the commit message #62:
+
+passing local run with multiple quant amp reports
+
+# This is the commit message #63:
+
+reset gdrive
+
+# This is the commit message #64:
+
+fix to items()
+
+# This is the commit message #65:
+
+remove print
+
+# This is the commit message #66:
+
+make changes
+
+# This is the commit message #67:
+
+makefile gdrive changes
+
+# This is the commit message #68:
+
+revert no-op changes (#105)
+
+# This is the commit message #69:
+
+added ct curves to diagnositics report
+
+# This is the commit message #70:
+
+increased font size, added ct curves to processing
+
+# This is the commit message #71:
+
+added ct curves under plate map
+
+# This is the commit message #72:
+
+removed comments, removed static method
+
+# This is the commit message #73:
+
+cleaning
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sat Mar 21 10:29:38 2020 -0700
+#
+# interactive rebase in progress; onto 61cf256
+# Last commands done (73 commands done):
+#    squash 8d420e0 removed comments, removed static method
+#    squash 5be5e6e cleaning
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/ct-curves' on '61cf256'.
+#
+# Changes to be committed:
+#	modified:   Makefile
+#	modified:   config.ini
+#	new file:   example_files/20200319-174657_SP000001_tube_to_plate.csv
+#	new file:   example_files/D041758_All Wells -  Quantification Amplification Results_FAM.csv
+#	new file:   example_files/D041758_All Wells -  Quantification Amplification Results_HEX.csv
+#	new file:   example_files/D041758_All Wells -  Quantification Cq Results.csv
+#	new file:   example_files/D041758_All Wells - Run Information.csv
+#	modified:   qpcr_processing/__main__.py
+#	modified:   qpcr_processing/config.py
+#	new file:   qpcr_processing/ct_curves.py
+#	modified:   qpcr_processing/make_final_results_pdf.py
+#	modified:   qpcr_processing/metadata.py
+#	modified:   qpcr_processing/output_results.py
+#	new file:   qpcr_processing/plate_utils.py
+#	modified:   qpcr_processing/processing.py
+#	modified:   qpcr_processing/protocol_helper.py
+#	modified:   qpcr_processing/reset.py
+#	modified:   setup.py
+#
+# Untracked files:
+#	.DS_Store
+#	Makefile.zip
+#	lambda_function.zip
+#	qpcr_processing/.DS_Store
+#	qpcr_processing/D041757_All Wells -  Quantification Amplification Results_HEX.csv
+#	qpcr_processing/D041762_All Wells -  Quantification Amplification Results_FAM.csv
+#	qpcr_processing/D041762_All Wells -  Quantification Amplification Results_HEX.csv
+#	qpcr_processing/D041763-results.csv
+#	qpcr_processing/Untitled.ipynb
+#	qpcr_processing/config.ini
+#	qpcr_processing/cov19_xml/
+#	qpcr_processing/test/test_qPCR_data.py
+#	requirements.txt
+#

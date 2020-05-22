@@ -1,0 +1,112 @@
+# This is a combination of 20 commits.
+# This is the 1st commit message:
+
+alphabetized setup
+
+# This is the commit message #2:
+
+start of plate layout class
+
+# This is the commit message #3:
+
+plate layout with local welllit passed
+
+# This is the commit message #4:
+
+plate layout working local with gdrive
+
+# This is the commit message #5:
+
+fixing
+
+# This is the commit message #6:
+
+updated tests for new plate layout api
+
+# This is the commit message #7:
+
+tweaks to testing
+
+# This is the commit message #8:
+
+option for uploading control wells
+
+# This is the commit message #9:
+
+fixed legacy plate issue
+
+# This is the commit message #10:
+
+tweaks to fixing gdrive tests
+
+# This is the commit message #11:
+
+fixed call in processing
+
+# This is the commit message #12:
+
+with custom control wells option
+
+# This is the commit message #13:
+
+incorporated PR suggestions
+
+# This is the commit message #14:
+
+updated tests to reflect plate interfact changes
+
+# This is the commit message #15:
+
+reorganized control wells
+
+# This is the commit message #16:
+
+typehints
+
+# This is the commit message #17:
+
+legacy plate lookup
+
+# This is the commit message #18:
+
+added enum options for plate type and process from
+
+# This is the commit message #19:
+
+accession testing tweaks
+
+# This is the commit message #20:
+
+handling accession tracking case
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Tue Mar 31 15:11:46 2020 -0700
+#
+# interactive rebase in progress; onto beda503
+# Last commands done (20 commands done):
+#    squash 41c00af accession testing tweaks
+#    squash 48b65ee handling accession tracking case
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/platelayout' on 'beda503'.
+#
+# Changes to be committed:
+#	modified:   code/qpcr_processing/__main__.py
+#	modified:   code/qpcr_processing/accession.py
+#	modified:   code/qpcr_processing/accession_tracking.py
+#	modified:   code/qpcr_processing/conftest.py
+#	new file:   code/qpcr_processing/control_wells.py
+#	modified:   code/qpcr_processing/processing.py
+#	new file:   code/qpcr_processing/test/data/welllit_plate_layout.csv
+#	modified:   code/qpcr_processing/test/test_accession.py
+#	new file:   code/qpcr_processing/test/test_control_wells.py
+#	modified:   code/setup.py
+#
+# Untracked files:
+#	Makefile.zip
+#	code/qpcr_processing/test/data/custom_control_wells.csv
+#	lambda/
+#	qpcr_processing/
+#	requirements.txt
+#

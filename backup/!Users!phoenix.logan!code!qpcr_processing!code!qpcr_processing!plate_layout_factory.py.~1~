@@ -1,0 +1,225 @@
+
+import csv
+from io import TextIOWrapper
+import pathlib
+from enum import Enum
+
+import numpy as np
+import pandas as pd
+
+import qpcr_processing.config as cfg
+from qpcr_processing.google import drive
+from qpcr_processing.google.drive import find_file_by_search_terms
+from qpcr_processing.control_wells import ControlWells
+
+
+class PlateType(Enum):
+    welllit = 1
+    legacy = 2
+
+
+class ProcessingFrom(Enum):
+    local = 1
+    gdrive = 2
+
+
+class PlateLayout:
+    def __init__(self, process_from: Enum, **kwargs):
+        self.process_from = process_from  # examples local or gdrive
+        self.plate = self._get_plate()
+
+    def _get_plate(self):
+
+        if self.process_from == ProcessingFrom.local:
+            plate_layout = PlateLayoutLocal
+
+        elif self.process_from == ProcessingFrom.gdrive:
+            plate_layout = PlateLayoutGDrive
+
+        else:
+            raise ValueError(
+                "process from needs to be either local or gdrive"
+                f"{self.process_from} currently not supported"
+            )
+
+        return plate_layout
+
+    def add_accessions_to_results(self, **kwargs):
+        return self.plate(**kwargs)
+
+
+class PlateLayoutLocal:
+    def __init__(
+        self,
+        layout_type: Enum,  # welllit or legacy
+        layout_fn: str or pathlib.Path,  # layout_filename
+        sample_plate_barcode: str,
+        results: list,  # output from processing.local_processing
+        custom_control_wells: str or pathlib.Path = None,  # csv of custom mapping
+    ):
+        self.layout_type = layout_type
+        self.layout_fn = layout_fn
+        self.results = results
+        self.sample_plate_barcode = sample_plate_barcode
+        self._custom_control_wells = custom_control_wells
+        self.plate = self._get_plate()
+        self.well_to_accession = self.plate.well_to_accession
+        self.accession_results = self.plate.accession_results
+
+    def _get_plate(self):
+        cfg.processing_log.info(
+            msg=f"finding plate layout for sample: {self.sample_plate_barcode}"
+        )
+
+        if self.layout_type == PlateType.welllit:
+            with open(self.layout_fn, "r") as fh:
+                control_wells = ControlWells(
+                    self.sample_plate_barcode, self._custom_control_wells
+                )
+                plate = WellLitPlate(fh, control_wells.mapping, self.results)
+
+        elif self.layout_type == PlateType.legacy:
+            with open(self.layout_fn, "rb") as fh:
+                plate = LegacyPlate(fh, self.results)
+
+        else:
+            raise ValueError(
+                "please select either legacy or welllit"
+                "invalid option {self.layout_type}"
+            )
+        return plate
+
+
+class PlateLayoutGDrive:
+    def __init__(
+        self,
+        sample_plate_barcode: str,
+        results: list,
+        service,
+        folder_id,
+        custom_control_wells: str or pathlib.Path = None,
+    ):
+        self.sample_plate_barcode = sample_plate_barcode
+        self.results = results
+        self._service = service
+        self._folder_id = folder_id
+        self._custom_control_wells = custom_control_wells
+        self.plate = self._get_plate()
+        self.well_to_accessions = self.plate.well_to_accession
+        self.accession_results = self.plate.accession_results
+
+    def _get_plate(self):
+        cfg.processing_log.info(
+            msg=f"finding plate layout for sample: {self.sample_plate_barcode}"
+        )
+        try:
+            finished_file_info = find_file_by_search_terms(
+                self._service, self._folder_id, [self.sample_plate_barcode, ".csv"],
+            )
+            cfg.processing_log.info(msg=f"Adding accession data from Welllit file")
+            with drive.get_file(
+                self._service, finished_file_info["id"], binary=False
+            ) as fh:
+                control_wells = ControlWells(
+                    self.sample_plate_barcode, self._custom_control_wells
+                )
+                plate = WellLitPlate(fh, control_wells.mapping, self.results)
+
+        except RuntimeError as e:
+            cfg.processing_log.error(
+                msg=f"Error in processing of accession data: {e} "
+                f"falling back to legacy plate data"
+            )
+            finished_file_info = find_file_by_search_terms(
+                self._service, self._folder_id, [self.sample_plate_barcode, ".xlsx"],
+            )
+            cfg.processing_log.info(msg=f"Adding accession data from Legacy file")
+            with drive.get_file(self._service, finished_file_info["id"]) as fh:
+                plate = LegacyPlate(fh, self.results)
+
+        return plate
+
+
+class WellLitPlate:
+    def __init__(
+        self, fh: TextIOWrapper, control_wells: dict = {}, results: list = None,
+    ):
+        self.fh = fh
+        self.results = results  # output from processing.local_processing
+        self.control_wells = control_wells
+        self.well_to_accession = self._well_to_accession()
+        if self.results:
+            self.accession_results = self._add_accessions_to_results()
+
+    def _well_to_accession(self):
+        well_to_accession = {}
+        accession_reader = csv.reader(self.fh, delimiter=",")
+
+        for row in accession_reader:
+            # Metadata start with "%"
+            if row[0].startswith("%") or row[0].startswith("\ufeff"):
+                continue
+
+            timestamp, accession_barcode, well = row
+            well_to_accession[well] = accession_barcode
+
+        if self.control_wells:
+            for well, control in self.control_wells.items():
+                well_to_accession[well] = control
+
+        return well_to_accession
+
+    def _add_accessions_to_results(self):
+        if self.well_to_accession:
+            cfg.processing_log.info(msg=f"Inserting accession info to results")
+            for entry in self.results:
+                well, *_ = entry
+                entry.insert(1, self.well_to_accession.get(well, ""))
+        else:
+            cfg.processing_log.info(
+                msg=f"Accession info missing - inserting 'MISSING' to results"
+            )
+            for entry in self.results:
+                entry.insert(1, "MISSING")
+
+        return self.results
+
+
+class LegacyPlate:
+    def __init__(self, fh: TextIOWrapper, results: list = None):
+        self.fh = fh
+        self.results = results
+        self.well_to_accession = self._well_to_accession()
+        self.accession_results = self._add_accessions_to_results()
+
+    def _well_to_accession(self):
+        ninety_six_rows = ["A", "B", "C", "D", "E", "F", "G", "H"]
+        well_to_accession = {}
+
+        df = pd.read_excel(self.fh, header=None)
+
+        for idx, row in df.iterrows():
+            if row[0] in ninety_six_rows:
+                # Get each row from the pandas data frame if the are one of the
+                # well rows (ninety_six_rows) and get all of the accession barcodes
+                # flattened into a list.
+                well_to_accession[row[0]] = list(df.iloc[idx][1:].replace(np.nan, ""))
+
+        return well_to_accession
+
+    def _add_accessions_to_results(self):
+        if self.well_to_accession:
+            cfg.processing_log.info(msg=f"Inserting accession info to results")
+
+            for entry in self.results:
+                entry_row = entry[0][0]
+                entry_column = int(entry[0][1:]) - 1
+                entry.insert(1, self.well_to_accession[entry_row][entry_column])
+        else:
+            cfg.processing_log.info(
+                msg=f"Accession info missing - inserting 'MISSING' to results"
+            )
+            for entry in self.results:
+                entry.insert(1, "MISSING")
+
+        return self.results

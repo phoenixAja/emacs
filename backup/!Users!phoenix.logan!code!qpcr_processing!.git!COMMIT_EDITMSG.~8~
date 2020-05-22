@@ -1,0 +1,40 @@
+# This is a combination of 4 commits.
+# This is the 1st commit message:
+
+local processing test start for control wells
+
+# This is the commit message #2:
+
+tweaks
+
+# This is the commit message #3:
+
+tweaks
+
+# This is the commit message #4:
+
+changed protocol
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Fri Apr 10 10:13:40 2020 -0700
+#
+# interactive rebase in progress; onto d47532f
+# Last commands done (4 commands done):
+#    squash a18de3d tweaks
+#    squash 3eca1ad changed protocol
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/test-control-wells' on 'd47532f'.
+#
+# Changes to be committed:
+#	modified:   code/qpcr_processing/test/test_local_processing_full_run.py
+#	new file:   example_files/B131275-results-for-comparison.csv
+#
+# Untracked files:
+#	Makefile.zip
+#	example_files/D041758-results-for-comparison.csv
+#	lambda/
+#	qpcr_processing/
+#	requirements.txt
+#

@@ -1,0 +1,6 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=serology-database-1.cpmmq0ugoybf.us-west-2.rds.amazonaws.com
+POSTGRES_PORT=5432
+POSTGRES_DB=covid19_serology_portal
+POSTGRES_USER=postgres

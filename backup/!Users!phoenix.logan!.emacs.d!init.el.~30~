@@ -1,0 +1,211 @@
+
+;; init.el --- Emacs configuration
+
+;; INSTALL PACKAGES
+;; --------------------------------------
+
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+
+
+(use-package company
+  :init (global-company-mode)
+  :config
+  (progn
+    ;; (bind-key (kbd "C-TAB") #'company-complete company-mode-map)
+    (add-to-list 'company-backends 'company-irony 'company-jedi)
+    (setq jedi:setup-keys t)
+    (setq jedi:complete-on-dot t)
+    (add-hook 'python-mode-hook 'jedi:setup)))
+
+(use-package ob-async
+  :ensure t)
+(use-package ivy
+ :config
+ (progn
+   (ivy-mode 1)
+   (setq ivy-use-virtual-buffers t)
+   (setq ivy-count-format "(%d/%d) ")
+   (global-set-key (kbd "C-c C-r") 'ivy-resume)))
+(use-package swiper
+  :ensure t
+  :config
+   (global-set-key (kbd "C-s") 'swiper))
+(use-package counsel
+  :ensure t
+  :config
+  (progn
+   (global-set-key (kbd "M-x") 'counsel-M-x)
+   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+   (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+   (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+   (global-set-key (kbd "<f1> l") 'counsel-find-library)
+   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+   (global-set-key (kbd "C-c g") 'counsel-git)
+   (global-set-key (kbd "C-c j") 'counsel-git-grep)
+   (global-set-key (kbd "C-c k") 'counsel-ag)
+   (global-set-key (kbd "C-x l") 'counsel-locate)
+   (global-set-key (kbd "M-y") 'counsel-yank-pop)
+   (global-set-key (kbd "C-c C-SPC") 'counsel-mark-ring)))
+(use-package magit
+  :ensure t
+  :config
+  (progn
+    (global-set-key (kbd "C-x g") 'magit-status))
+  (setq magit-completing-read-function 'ivy-completing-read))
+
+(use-package lsp-mode
+  :config
+  (require 'lsp-clients)
+  (add-hook 'python-mode-hook #'lsp)
+  (add-hook 'js-mode-hook #'lsp)
+  (add-hook 'js2-mode-hook #'lsp)
+  (add-hook 'rust-mode-hook #'lsp)
+  (add-hook 'css-mode #'lsp)
+  (setq lsp-clients-clangd-args '("-j=4" "-background-index" "-log=error")))
+
+(use-package company-lsp)
+(use-package lsp-ui)
+
+;; BASIC CUSTOMIZATION
+;; --------------------------------------
+
+(setq inhibit-startup-message t) ;; hide the startup message
+(load-theme 'material t) ;; load material theme
+(global-linum-mode t) ;; enable line numbers globally
+
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+(setq c-default-style "stroustrup")
+
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
+
+
+;; mac keybindings
+(setq mac-option-key-is-meta nil) 
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old
+  )
+
+(setq doc-view-continuous t)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#D3D7CF" "#cc0000" "#4E9A06" "#C4A000" "#3465A4" "#75507B" "#06989A" "#000000"])
+ '(custom-enabled-themes (quote (gruvbox-dark-medium)))
+ '(custom-safe-themes
+   (quote
+    ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "585942bb24cab2d4b2f74977ac3ba6ddbd888e3776b9d2f993c5704aa8bb4739" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" "a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" default)))
+ '(fci-rule-color "#37474f")
+ '(hl-sexp-background-color "#1c1f26")
+ '(org-agenda-files
+   (quote
+    ("~/org/spid_benchmarking.org" "~/org/todo.org" "~/org/org_tutorial.org")))
+ '(package-selected-packages
+   (quote
+    (company-lsp lsp-ui lsp-mode xref-js2 tide multi-web-mode pyenv-mode-auto pyenv-mode company-jedi jedi zpresent csv-mode company-anaconda undo-propose auto-org-md cython-mode yaml-mode markdown-mode dockerfile-mode jupyter groovy-mode expand-region dashboard minimap use-package py-autopep8 ob-async material-theme magit gruvbox-theme go-mode flycheck exec-path-from-shell elpygen ein counsel better-defaults)))
+ '(term-default-bg-color "#000000")
+ '(term-default-fg-color "#dddd00")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#f36c60")
+     (40 . "#ff9800")
+     (60 . "#fff59d")
+     (80 . "#8bc34a")
+     (100 . "#81d4fa")
+     (120 . "#4dd0e1")
+     (140 . "#b39ddb")
+     (160 . "#f36c60")
+     (180 . "#ff9800")
+     (200 . "#fff59d")
+     (220 . "#8bc34a")
+     (240 . "#81d4fa")
+     (260 . "#4dd0e1")
+     (280 . "#b39ddb")
+     (300 . "#f36c60")
+     (320 . "#ff9800")
+     (340 . "#fff59d")
+     (360 . "#8bc34a"))))
+ '(vc-annotate-very-old-color nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
+;; show startup screen showing recent activity
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+;; Or if you use use-package
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; org mode stuff
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+;; files to scan for the agenda
+(setq org-agenda-files (list "~/org/todo.org"
+			     "~/org/org_tutorial.org"
+			     ))
+
+;; set key for agenda
+;;set priority range from A to C with default A
+(setq org-highest-priority ?A)
+(setq org-lowest-priority ?C)
+(setq org-default-priority ?A)
+
+;;set colours for priorities
+(setq org-priority-faces '((?A . (:foreground "#F0DFAF" :weight bold))
+                           (?B . (:foreground "LightSteelBlue"))
+                           (?C . (:foreground "OliveDrab"))))
+
+;;open agenda in current window
+;; (setq org-agenda-window-setup (quote current-window))
+
+;;capture todo items using C-c c t
+(define-key global-map (kbd "C-c c") 'org-capture)
+(setq org-capture-templates
+      '(("t" "todo" entry (file+headline "~/org/todo.org" "Tasks")
+         "* TODO [#A] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
+

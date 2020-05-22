@@ -1,0 +1,99 @@
+pick ff9deec added comments
+pick 98ea303 rundata class
+pick b19d6f9 removed unused param
+pick 492bfa7 quantification amplification class
+pick ce704ba args as filepath
+pick 6478b8e added ct curves pdf
+pick 911c866 changed im size for ct curves
+pick 469de0d * resized ct curves image and centered on page * added well and column names to axes labels
+pick 9f74d4a recentered image
+pick 6addeae clean static method
+pick 5822e2e linting
+pick 2b60a43 watching new logs folder
+pick 63824d2 added qpcr Raw data class to metadata
+pick 6f8cc28 modified get_barcode to take in logs style filename
+pick 097fe6e changed local processing to handle new file types
+pick 88522fa local processing tweaks
+pick 1fe553c changed plate layout folder
+pick 05abb43 tweaks
+pick 1792565 removed file
+pick 39c3eba new makefile command for run local
+pick aad3eba new sample files
+pick fee69db moved plate utility specific functions to thier own file
+pick d2d920b ct curves for all prototypes
+pick 0744e70 tweaks
+pick 07db7ae debugging run local
+pick 021742c example well lit
+pick ba93c71 passing local run with multiple quant amp reports
+pick ffe5f37 testing gdrive
+pick 217e280 tweaks
+pick 0ae2a9b reset gdrive
+pick d89e837 fix to items()
+pick 72b5a6a tweaks
+pick 1a6b24e remove print
+pick ae98eb4 matplotlib in setup
+pick 920f49e make changes
+pick d676f78 makefile typo
+pick 64e8207 makefile gdrive changes
+pick 31d68c0 revert no-op changes (#105)
+pick 6ce7fff make change for reset gdrive test logs (still broken))
+pick 0f7f434 adding protocols to yamal
+pick 501e567 added comments
+pick 19aa6eb rundata class
+pick bac22bc removed unused param
+pick 8aa49a2 quantification amplification class
+pick 63e9c1a added ct curves pdf
+pick 048513a changed im size for ct curves
+pick 0ea927c * resized ct curves image and centered on page * added well and column names to axes labels
+pick 284ea85 clean static method
+pick b5ece5f linting
+pick c62fedf watching new logs folder
+pick d943ba7 added qpcr Raw data class to metadata
+pick 9c7aa86 modified get_barcode to take in logs style filename
+pick 8989e1b changed local processing to handle new file types
+pick 33e6d4a local processing tweaks
+pick 43da3e4 changed plate layout folder
+pick d910b5d tweaks
+pick 1e5c6b6 removed file
+pick ece37a0 new makefile command for run local
+pick a9187ae ct curves for all prototypes
+pick 382850f tweaks
+pick aab0ff0 debugging run local
+pick 1af815f passing local run with multiple quant amp reports
+pick 7979836 reset gdrive
+pick a9f3e8c fix to items()
+pick c9701e2 remove print
+pick 4e9d45c make changes
+pick b5d059e makefile gdrive changes
+pick 7c0b8de revert no-op changes (#105)
+pick 523d09c added ct curves to diagnositics report
+pick c265084 increased font size, added ct curves to processing
+pick 61c717e added ct curves under plate map
+pick 8d420e0 removed comments, removed static method
+pick 5be5e6e cleaning
+
+# Rebase 61cf256..5be5e6e onto 61cf256 (73 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out

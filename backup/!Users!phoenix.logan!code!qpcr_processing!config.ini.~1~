@@ -1,0 +1,15 @@
+[GOOGLE]
+GDRIVE_PATH= %(GDRIVE_PATH)s
+MASTER_SPREADSHEET = %(MASTER_SPREAD_SHEET)s
+GOOGLE_DRIVE_CREDS = %(GOOGLE_DRIVE_CREDS)s
+
+[SHEETS]
+FORM_DATA = "Covid-19 Collective Form (Responses)"
+BRAVO_PCR_WORSHEET = "Bravo PCR aliquoting"
+BRAVO_RNA_WORKSHEET = "Bravo RNA extractions"
+
+[GENERAL]
+TIMEZONE = "America/Los Angeles"
+
+[AWS]
+S3_BACKUPS_BUCKET = 'covid-19-backups'

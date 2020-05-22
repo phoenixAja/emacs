@@ -1,0 +1,14 @@
+import pytest
+from qpcr_processing.accession import ControlWells
+
+def test_custom_control_wells(TEST_DATA_DIR, sample_plate_barcode):
+    control_wells_fp = os.path.join(TEST_DATA_DIR, "custom_control_wells.csv")
+
+    control_wells = ControlWells(sample_plate_barcode, control_wells_fp)
+    expected_mapping = {
+        'A1': ' Water',
+        'A11': ' Water',
+        'A8': ' PC',
+        'H9': ' HSC'
+    }
+    

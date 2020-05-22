@@ -1,0 +1,31 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: nf-core-predictorthologs-1.0dev
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - conda-forge::python=3.7.3
+  # TODO nf-core: Add required software dependencies here
+  - bioconda::fastqc=0.11.8
+  - bioconda::multiqc=1.7
+  - conda-forge::r-markdown=1.1
+  - conda-forge::r-base=3.6.1
+<<<<<<< HEAD
+  - bioconda::samtools=1.10
+  - bioconda::diamond=0.9.30
+  - bioconda::fastp=0.20.0
+  - conda-forge::unzip=6.0
+  - conda-forge::rsync=3.1.3
+  - pip
+  - pip:
+    - git+https://github.com/czbiohub/kh-tools.git@olgabot/more-encodings#egg=khtools
+=======
+  - bioconda::samtools
+  - bioconda::diamond
+  - bioconda::fastp
+  - pip
+  - pip:
+    - git+https://github.com/czbiohub/kh-tools.git@olgabot/partition-coding-reads#egg=khtools
+>>>>>>> Add dependencies to environment

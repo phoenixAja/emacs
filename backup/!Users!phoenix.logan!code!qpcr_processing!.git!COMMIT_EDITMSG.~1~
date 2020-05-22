@@ -1,0 +1,32 @@
+# This is a combination of 4 commits.
+# This is the 1st commit message:
+
+Added form data backup to S3
+
+# This is the commit message #2:
+
+moved to processing
+
+# This is the commit message #3:
+
+Delete Untitled.ipynb
+# This is the commit message #4:
+
+Delete backups.py
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Tue Mar 17 17:07:52 2020 -0700
+#
+# interactive rebase in progress; onto 23feaf1
+# Last commands done (4 commands done):
+#    squash dcb5cb2 Delete Untitled.ipynb
+#    squash 6bb4f5a Delete backups.py
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/qpcr-backups' on '23feaf1'.
+#
+# Changes to be committed:
+#	modified:   qpcr_processing/processing.py
+#	modified:   setup.py
+#

@@ -1,0 +1,17 @@
+// components/todos/Dashboard.js
+
+import React, { Component } from 'react';
+import ProtocolList from './ProtocolList';
+
+class Dashboard extends Component {
+  render() {
+    return (
+      <div className='ui container'>
+        <div>Protocol Create Form</div>
+        <Protocol List />
+      </div>
+    );
+  }
+}
+
+export default Dashboard;

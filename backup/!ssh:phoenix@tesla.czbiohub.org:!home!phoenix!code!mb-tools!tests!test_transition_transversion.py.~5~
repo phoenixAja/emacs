@@ -1,0 +1,150 @@
+import os
+import pytest
+import pandas as pd
+from pandas.testing import assert_frame_equal
+
+<<<<<<< HEAD
+from single_cell_mutations.transitions_transversions import (
+    transition_v_transversion,
+    mean_groupby,
+    tvt_cell_id_mean_std_df
+)
+=======
+from mbtools.transitions_transversions import TransitionTransversion
+>>>>>>> testing new refactor
+
+
+
+def test_transition_v_transversion(
+        test_metadata_input,
+        test_mutations_input,
+        TEST_DATA_OUTPUT_DIR
+        
+):
+    transition_v_transversion_correct = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "transitions_v_transversions.csv"
+        ),
+        index_col=0        
+    )
+<<<<<<< HEAD
+
+    expected_intermediate = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "test_tvt_intermediate.csv"
+        ),
+        index_col=0            
+    )
+
+    results, intermediate = transition_v_transversion(
+=======
+    
+    results = TransitionTransversion(
+>>>>>>> testing new refactor
+        test_mutations_input,
+        test_metadata_input
+    ).trans_df_groupby
+    
+    assert_frame_equal(
+        results.reset_index(drop=True),
+        transition_v_transversion_correct.reset_index(drop=True)
+    )
+
+    assert_frame_equal(
+        expected_intermediate.reset_index(drop=True),
+        intermediate.reset_index(drop=True)
+    )
+
+
+def test_transition_v_transversion_with_alt_star(
+        test_metadata_input,
+        test_mutations_input,
+        TEST_DATA_OUTPUT_DIR
+):
+    transition_v_transversion_alt_star_correct = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "transitions_v_transversions_alt_star.csv"
+        ),
+        index_col=0        
+    )
+    
+<<<<<<< HEAD
+    # TODO: add in alt_star testing intermediate df
+    results, _ = transition_v_transversion(
+=======
+    results = TransitionTransversion(
+>>>>>>> testing new refactor
+        test_mutations_input,
+        test_metadata_input
+    ).trans_df_groupby
+    
+    assert_frame_equal(
+        results.reset_index(drop=True),
+        transition_v_transversion_alt_star_correct.reset_index(drop=True)
+    )
+
+
+
+def test_mean_groupby(TEST_DATA_OUTPUT_DIR):
+
+    # read in the full intermediate dataframe from transition_v_transversion step
+    full_tvt_df = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "test_tvt_intermediate.csv"
+        ),
+        index_col=0           
+
+    )
+    
+    merged_counts = mean_groupby(
+        full_tvt_df,
+        "mutation_id",
+        ["cell_id", "tissue", "age", "transitions_v_transversions"]
+    )
+
+    expected_merged_counts = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "mean_groupby_results.csv"
+        ),
+        index_col=0           
+    )
+    
+    assert_frame_equal(
+        expected_merged_counts.reset_index(drop=True),
+        merged_counts.reset_index(drop=True)
+        
+    )
+
+
+def test_tvt_cell_id_mean_std_df(TEST_DATA_OUTPUT_DIR):
+
+    tran_per_by_tiss_age = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "mean_groupby_results.csv"
+        ),
+        index_col=0           
+    )
+
+    actual = tvt_cell_id_mean_std_df(
+        tran_per_by_tiss_age,
+        "Transition",
+    )
+
+    expected = pd.read_csv(
+        os.path.join(
+            TEST_DATA_OUTPUT_DIR,
+            "tvt_cell_id_mean_std_out.csv"
+        ),
+        index_col=0
+    )
+
+    assert_frame_equal(
+        expected,
+        actual.reset_index().set_index("tissue")
+    )

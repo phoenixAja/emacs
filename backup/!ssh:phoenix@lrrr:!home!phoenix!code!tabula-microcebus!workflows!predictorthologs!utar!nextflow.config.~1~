@@ -1,0 +1,7 @@
+executor {
+   cpus = 64
+   memory = '1024 GB'
+}
+process {
+  errorStrategy = 'ignore'
+}

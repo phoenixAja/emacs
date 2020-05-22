@@ -1,0 +1,40 @@
+# This is a combination of 4 commits.
+# This is the 1st commit message:
+
+lambda deploy for backups in make
+
+# This is the commit message #2:
+
+removed logging
+
+# This is the commit message #3:
+
+resetting gdrive to master version
+
+# This is the commit message #4:
+
+removed logging import
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu Mar 19 09:55:29 2020 -0700
+#
+# interactive rebase in progress; onto 2411be5
+# Last commands done (14 commands done):
+#    squash 15dcf2c resetting gdrive to master version
+#    squash 333e30d removed logging import
+# No commands remaining.
+# You are currently rebasing branch 'phoenix/backups' on '2411be5'.
+#
+# Changes to be committed:
+#	modified:   Makefile
+#	modified:   qpcr_processing/backup.py
+#	modified:   qpcr_processing/gdrive.py
+#
+# Untracked files:
+#	.DS_Store
+#	lambda_function.zip
+#	qpcr_processing/Untitled.ipynb
+#	requirements.txt
+#

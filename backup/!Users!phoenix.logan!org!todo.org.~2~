@@ -1,0 +1,29 @@
+* Tasks
+** DONE [#A] Research Options for Madrone front end 
+   CLOSED: [2020-01-09 Thu 14:37]
+Look into pathogenwatch/microreact and auspice/nextstrain for potential front end replacements for madrone
+   SCHEDULED: <2020-01-09 Thu>
+** TODO [#A] Setup email for spid nextflow pipeline [66%]
+   SCHEDULED: <2020-01-10 Fri>
+*** DONE Contact Jason to add instance ips to email whitelist
+    CLOSED: [2020-01-09 Thu 11:00]
+Added, but still no luck testing with telnet, maybe system takes longer to update
+Jason on Vacation until Tuesday, so this wight need to be put on hold
+*** DONE Add in email settings to nextflow config
+    CLOSED: [2020-01-09 Thu 14:37]
+*** TODO Test to see if pipeline properly sends email
+** TODO [#A] Add AWS batch option to nf-spid [50%]
+   SCHEDULED: <2020-01-10 Fri>
+*** DONE Look into if we need to re-build batch
+    CLOSED: [2020-01-09 Thu 10:58]
+we can use the default queue.
+*** DONE Write batch code in nextflow config
+    CLOSED: [2020-01-09 Thu 14:37]
+*** TODO Build test dataset for nf-spid
+*** TODO Test batch code
+** TODO [#A] Merge Dev into Master for kmermaid
+prerequisite for getting the ska branch merged in
+   SCHEDULED: <2020-01-14 Tue>
+** TODO [#A] SBT localization
+finish kmer index sbt localization for sourmash PR, (bonus to get this done quickly to have presentation for cold springs harbor?)
+   SCHEDULED: <2020-01-10 Fri>

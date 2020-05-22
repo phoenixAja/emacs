@@ -1,0 +1,1 @@
+("~/code/bcl2fastr/" "~/code/covid19/" "~/code/covid19_serology_portal/" "~/.emacs.d/" "~/code/czi-fe-starter-kit/" "~/.oh-my-zsh/" "~/code/pyxi/" "~/code/czb-sourmash/" "~/code/examples/test/" "~/code/qpcr_processing/" "~/code/qpcr_processing_deployments/" "~/code/cliahub/" "~/code/tabula_senis_mutations/" "~/code/nf-predictorthologs/" "~/code/tabula-microcebus/")

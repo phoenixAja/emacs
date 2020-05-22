@@ -1,0 +1,16 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch phoenix/bam-bed-intersect
+# Your branch is up to date with 'origin/phoenix/bam-bed-intersect'.
+#
+# Changes to be committed:
+#	modified:   .github/workflows/ci.yml
+#	renamed:    conf/test_bam_bed_intersect.config -> conf/test_bam.config
+#	modified:   main.nf
+#	modified:   nextflow.config
+#
+# Untracked files:
+#	scratch.nf
+#

@@ -1,0 +1,32 @@
+added todo in ap
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 13 08:57:43 2020 -0700
+#
+# On branch nav-component
+# Your branch is ahead of 'origin/nav-component' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   covid19_serology_portal/frontend/src/components/App.js
+#
+# Changes not staged for commit:
+#	modified:   config/settings/base.py
+#	modified:   config/settings/production.py
+#	deleted:    covid19_serology_portal/frontend/src/components/layout/viral_background.png
+#
+# Untracked files:
+#	.ebextensions/
+#	.envs/.local/.postgres
+#	.idea/
+#	covid19_serology_portal/jsconfig.json
+#	covid19_serology_portal/static/25a65f09eec4637d9e28132dc228c76c.png
+#	covid19_serology_portal/static/frontend/
+#	covid19_serology_portal/static/images/layout/
+#	covid19_serology_portal/static/images/partner_logos/UCSF_sig_black_RGB.jpg
+#	covid19_serology_portal/static/img/
+#	covid19_serology_portal/static/viral_background.png
+#	troubleshoot/
+#

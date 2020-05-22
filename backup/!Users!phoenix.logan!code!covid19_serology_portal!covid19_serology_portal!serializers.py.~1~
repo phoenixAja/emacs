@@ -1,0 +1,3 @@
+from rest_framework import Serializer
+x
+from covid19_serology_portal.protocols.models import Protocol

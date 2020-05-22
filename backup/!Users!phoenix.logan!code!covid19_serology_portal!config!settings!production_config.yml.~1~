@@ -1,0 +1,61 @@
+GENERAL:
+  DJANGO_READ_DOT_ENV_FILE: True  
+  DJANGO_SETTINGS_MODULE: config.settings.production
+  DJANGO_SECRET_KEY: DfOtO7FPCbs4Et6njJikbA6id71qpJrdxpi6om6yT4QJLKqBiSZvum2tmlNo0g2R
+  DJANGO_ADMIN_URL: 39RXly8Th7JO7AqUhccxvic4o7JBY2Mw/
+  DJANGO_ALLOWED_HOSTS: 34.212.29.156,serologyportal.czbiohub.org
+  DJANGO_ACCOUNT_ALLOW_REGISTRATION: True
+  DJANGO_DEBUG: True
+  TIMEZONE: America/Los_Angeles
+  LANGUAGE_CODE: en-us
+
+ADMIN:
+  URL: 39RXly8Th7JO7AqUhccxvic4o7JBY2Mw/
+
+SECURITY:
+  # TIP: beqtter off using DNS, however, redirect is OK too
+  DJANGO_SECURE_SSL_REDIRECT: True
+  DJANGO_SESSION_COOKIE_SECURE: True
+  DJANGO_CSRF_COOKIE_SECURE: True
+  DJANGO_SECURE_HSTS_PRELOAD: True
+  DJANGO_SECURE_CONTENT_TYPE_NOSNIFF: True
+  DJANGO_CSRF_COOKIE_HTTPONLY: True
+  DJANGO_SESSION_COOKIE_HTTPONLY: True
+  DJANGO_SECURE_BROWSER_XSS_FILTER: True
+
+AUTH:
+  DJANGO_ACCOUNT_ALLOW_REGISTRATION: True
+  DJANGO_ACCOUNT_AUTHENTICATION_METHOD: username
+  DJANGO_ACCOUNT_EMAIL_REQUIRED: True
+  DJANGO_ACCOUNT_EMAIL_VERIFICATION: mandatory
+  
+EMAIL:
+  DEFAULT_FROM_EMAIL: covid19.serology.portal@czbiohub.org
+  DJANGO_SERVER_EMAIL: covid19.serology.portal@czbiohub.org
+  BACKEND: django.core.mail.backends.smtp.EmailBackend
+  HOST: smtp.gmail.com
+  USE_TLS: True
+  PORT: 587
+  HOST_USER: covid19.serology.portal@czbiohub.org
+  HOST_PASSWORD: CZBH@499!
+
+AWS:
+  DJANGO_AWS_STORAGE_BUCKET_NAME: covid19-serology-portal
+  DJANGO_AWS_REGION_NAME: us-west-2
+  DJANGO_AWS_DEFAULT_ACL: public-read
+  
+GUNICORN:
+  WEB_CONCURRENCY: 4
+
+REDIS:
+  REDIS_URL: redis://redis:6379/0
+
+DATABASE:
+  ENGINE: django.db.backends.postgresql_psycopg2
+  NAME: covid19_serology_portal
+  USER: postgres
+  PASSWORD: serology
+  HOST: serology-database.cpmmq0ugoybf.us-west-2.rds.amazonaws.com
+  PORT: 5432
+
+

@@ -1,0 +1,129 @@
+# This is a combination of 19 commits.
+# This is the 1st commit message:
+
+index.html
+
+# This is the commit message #2:
+
+added async functionality
+
+# This is the commit message #3:
+
+jwt config in settings
+
+# This is the commit message #4:
+
+users authentication/view changes with jwt
+
+# This is the commit message #5:
+
+new components for signup/login, still need to integrate in with navbar
+
+# This is the commit message #6:
+
+frontend views and axios js
+
+# This is the commit message #7:
+
+removing stale stuff from templates
+
+# This is the commit message #8:
+
+Home component
+
+# This is the commit message #9:
+
+got navbar working with uername
+
+# This is the commit message #10:
+
+button links for logout
+
+# This is the commit message #11:
+
+removed ununsed method
+
+# This is the commit message #12:
+
+no more then
+
+# This is the commit message #13:
+
+clear form values after submission
+
+# This is the commit message #14:
+
+added history for url pushing
+
+# This is the commit message #15:
+
+setstate of username after logout
+
+# This is the commit message #16:
+
+removed test view
+
+# This is the commit message #17:
+
+adding comments
+
+# This is the commit message #18:
+
+removed old files
+
+# This is the commit message #19:
+
+removed signup
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon May 4 16:14:49 2020 -0700
+#
+# interactive rebase in progress; onto ad6d713
+# Last commands done (19 commands done):
+#    squash 6c56fae removed old files
+#    squash 7c83020 removed signup
+# No commands remaining.
+# You are currently rebasing branch 'nav-component' on 'ad6d713'.
+#
+# Changes to be committed:
+#	modified:   config/settings/base.py
+#	new file:   config/settings/base_config.yml
+#	modified:   config/settings/local.py
+#	modified:   config/settings/production.py
+#	modified:   config/urls.py
+#	new file:   covid19_serology_portal/frontend/src/axiosApi.js
+#	modified:   covid19_serology_portal/frontend/src/components/App.js
+#	new file:   covid19_serology_portal/frontend/src/components/layout/Home.js
+#	modified:   covid19_serology_portal/frontend/src/components/layout/Navbar.js
+#	new file:   covid19_serology_portal/frontend/src/components/login.js
+#	new file:   covid19_serology_portal/frontend/src/history.js
+#	modified:   covid19_serology_portal/frontend/urls.py
+#	modified:   covid19_serology_portal/frontend/views.py
+#	modified:   covid19_serology_portal/templates/base.html
+#	new file:   covid19_serology_portal/templates/pages/index.html
+#	modified:   covid19_serology_portal/users/admin.py
+#	modified:   covid19_serology_portal/users/migrations/0001_initial.py
+#	modified:   covid19_serology_portal/users/models.py
+#	new file:   covid19_serology_portal/users/serializers.py
+#	modified:   covid19_serology_portal/users/urls.py
+#	modified:   covid19_serology_portal/users/views.py
+#	modified:   package-lock.json
+#	modified:   package.json
+#	modified:   webpack.config.js
+#
+# Untracked files:
+#	.ebextensions/
+#	.envs/.local/.postgres
+#	.eslintrc
+#	.idea/
+#	covid19_serology_portal/jsconfig.json
+#	covid19_serology_portal/static/25a65f09eec4637d9e28132dc228c76c.png
+#	covid19_serology_portal/static/frontend/
+#	covid19_serology_portal/static/images/layout/
+#	covid19_serology_portal/static/images/partner_logos/UCSF_sig_black_RGB.jpg
+#	covid19_serology_portal/static/img/
+#	covid19_serology_portal/static/viral_background.png
+#	troubleshoot/
+#

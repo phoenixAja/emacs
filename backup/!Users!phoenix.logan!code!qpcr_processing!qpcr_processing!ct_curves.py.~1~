@@ -1,0 +1,65 @@
+import pandas as pd
+import string
+import matplotlib.pyplot as plt
+
+
+class ct_curves:  
+
+    ROWS = string.ascii_uppercase[:16]
+    COLS = [str(i) for i in range(1, 25)]
+    
+    def __init__(self, quantification_amplification):
+        self._quant_amp = quantification_amplification
+        
+    @property
+    def quant_amp(self):
+        try:
+            # clean data, remove col
+            self._quant_amp.drop(
+            'Unnamed: 0', axis = 1, inplace=True
+        )
+        
+        # if unnamed column already dropped
+        except KeyError:
+            pass
+            
+
+    def convert96to384(self, well, i):
+        """map gene/protocol info from 96 to 384 well plate"""
+        row = ct_curves.ROWS.index(well[0])
+        col = ct_curves.COLS.index(well[1:])
+        
+        if i == 0:
+            return ct_curves.ROWS[2*row] + ct_curves.COLS[2*col]
+        elif i == 1:
+            return ct_curves.ROWS[2*row] + ct_curves.COLS[2*col + 1]
+        elif i == 2:
+            return ct_curves.ROWS[2*row + 1] + ct_curves.COLS[2*col]
+        elif i == 3:
+            return ct_curves.ROWS[2*row + 1] + ct_curves.COLS[2*col + 1]
+        else:
+            raise
+
+    
+    def plot_curves(self):
+        """plot ct curves per well in 96 well plate"""
+        rows_96 = len(ct_curves.ROWS)//2
+        cols_96 = len(ct_curves.COLS)//2
+
+        fig, ax = plt.subplots(
+            rows_96, 
+            cols_96, 
+            figsize = (18, 8), 
+            sharex = True, 
+            sharey = True
+        )
+        
+        for i in range(rows_96):
+            for j in range(cols_96):
+                well = ct_curves.ROWS[i] + ct_curves.COLS[j]
+                ax[i, j].plot(self._quant_amp['Cycle'], self._quant_amp[convert96to384(well, 0)], label='RdRp')
+                ax[i, j].plot(self._quant_amp['Cycle'], self._quant_amp[convert96to384(well, 1)], label='E')
+                ax[i, j].plot(self._quant_amp['Cycle'], self._quant_amp[convert96to384(well, 2)], label='RNAse P')
+        handles, labels = ax[0,0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc='center left')
+        return fig, ax

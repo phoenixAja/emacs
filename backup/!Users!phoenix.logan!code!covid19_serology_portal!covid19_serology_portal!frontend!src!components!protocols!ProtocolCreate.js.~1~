@@ -1,0 +1,25 @@
+// components/todos/TodoCreate.js
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addProtocol } from '../../actions/protocols';
+import ProtocolForm from './ProtocolForm';
+
+class ProtocolCreate extends Component {
+  onSubmit = formValues => {
+    this.props.addTodo(formValues);
+  };
+
+  render() {
+    return (
+      <div style={{ marginTop: '2rem' }}>
+        <ProtocolForm destroyOnUnmount={false} onSubmit={this.onSubmit} />
+      </div>
+    );
+  }
+}
+
+export default connect(
+  null,
+  { addProtocol }
+)(ProtocolCreate);

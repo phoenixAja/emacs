@@ -1,0 +1,3 @@
+import Heading from './layout/Heading';
+import Banner from './layout/Banner';
+

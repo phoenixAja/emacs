@@ -1,0 +1,31 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Grid, Paper, Typography } from '@material-ui/core';
+
+const ConsortiaMemberBox = function(props) {
+    return (
+	<Grid item xs={3}>
+	<Paper id="protocol" variant="outlined" square >	
+	<Typography id="protocol-short">{props.name}</Typography>
+	</Paper>
+	<Typography id="protocol-longname" >{props.longname}</Typography>
+	</Grid>
+    )
+}
+
+const ConsortiaMemberBoxes = function() {
+    return (
+	<Grid container direction="row" justify="center" alignItems="center" spacing={5} >
+	<ConsortiaMemberBox name="RBT" longname="Research Based Test">
+	</ConsortiaMemberBox>
+	<ConsortiaMemberBox name="LDT" longname="Laboratory Developed Test">
+	</ConsortiaMemberBox>
+	<ConsortiaMemberBox name="EUA" longname="Emergency Use Authorization">
+	</ConsortiaMemberBox>
+	<ConsortiaMemberBox name="COS" longname="Commercial Off The Shelf">
+	</ConsortiaMemberBox>	
+	</Grid>
+    );
+};
+
+export default ConsortiaMemberBoxes;

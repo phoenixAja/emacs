@@ -1,0 +1,36 @@
+// components/protocols/TodoList.js
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getProtocols } from '../../actions/protocols';
+
+class TodoList extends Component {
+  componentDidMount() {
+    this.props.getProtocols();
+  }
+
+  render() {
+    return (
+      <div className='ui relaxed divided list' style={{ marginTop: '2rem' }}>
+        {this.props.protocols.map(protocol => (
+          <div className='item' key={protocol.id}>
+            <i className='large calendar outline middle aligned icon' />
+            <div className='content'>
+              <a className='header'>{protocol.protocol_name}</a>
+              <div className='description'>{protocol.protocol_description}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  protocols: Object.values(state.protocols)
+});
+
+export default connect(
+  mapStateToProps,
+  { getProtocols }
+)(ProtocolsList);

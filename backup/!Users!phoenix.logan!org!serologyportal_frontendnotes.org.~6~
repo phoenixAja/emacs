@@ -1,0 +1,64 @@
+* Frontend Component Breakdown For Serology Portal:
+
+** Resources:
+   * [[https://www.figma.com/file/sKEtcRd6H6OUNrfDgerxgF/Biohub-COVID-19-Projects?node-id=0%3A1][figma design document]]
+   * [[https://github.com/chanzuckerberg/czi-fe-starter-kit][czi FE starter kit]]
+   * [[https://www.figma.com/file/0jnQEvhnqGwbUL0qOYGgd5/biohubUI-(Current)?node-id=0%3A1][Biohub UI Guide]]
+   * [[https://docs.google.com/document/d/16uGCYISKBTuBqCJNBQREkeKsFZ0wO8rTK2LDAHJnQcA/edit][front end doc with learning resources]]
+   * [[https://reactjs.org/docs/hello-world.html][react hello world]]
+   * [[https://reactjs.org/tutorial/tutorial.html][introduction to react]]
+   * [[https://github.com/chanzuckerberg/idseq-web/blob/master/webpack.config.common.js][idseq github]]
+   * [[https://cookiecutter-django.readthedocs.io/en/latest/][django cookie cutter docs]]
+
+** Helpful Tutorials:
+   * [[https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0][crud todo app with react and django]]
+   * [[https://www.valentinog.com/blog/drf/][leads example react/django app]]
+   * [[https://hackernoon.com/110percent-complete-jwt-authentication-with-django-and-react-2020-iejq34ta][django jwt configuration hackernoon]]
+
+
+** Component Breakdown:
+
+  * Index Page:
+    * Nav Bar
+      * logo
+      * protocols/visualizations
+      * Sign In
+      * Serology Portal Label
+    * Banner
+      * background image
+      * text
+    * Heading (view protocols, consortium members)
+    * Protocol Divs
+      * Abbreviation letters (RBT, LDT, EUA, COS)
+      * Grey filled in background box
+      * labels at the bottom (Research Based Tests, Lab Developed Test, etc.)
+    * Consortium Member Divs
+      * consortium member logos
+
+  * ListView (Protocols):
+    * Heading (Protocols)
+    * Search bars:
+      * Search
+      * Assay Type (dropdown)
+      * Assay Format (dropdown)
+      * Clickable Selection Element
+    * Table:
+      * Header
+      * Rows
+	* clickable "protocol name elemement to detail view"
+    * Button (Add Protocol)
+
+  * DetailView:
+    * Heading (with Protocol Name)
+    * Descriptive Fields from Protocol Models
+    * Heading (Validation)
+    * Validation Uploaded images
+    * Edit/Delete Buttons
+
+  * FormView: (adding/editing)
+    * back to listview link
+    * Heading (Edit/Add Protocol)
+    * field formats (Name, Assay Type, etc.)
+    * Save/Submit Button
+    
+    

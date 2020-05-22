@@ -1,0 +1,34 @@
+import boto3
+import json
+import pandas as pd
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from io import StringIO # python3; python2: BytesIO 
+import os
+from datetime import datetime
+import time
+
+
+def upload_worksheet_to_s3(worksheet, bucketname):
+    
+    s3_resource = boto3.resource('s3')
+    t = gc.open("Covid-19 Collective Form (Responses)")
+    d = datetime.today()
+    parent_dir = d.strftime("%d-%B-%Y %H:%M:%S")
+    for w in t.worksheets():
+        all_vals = w.get_all_values()
+        df = pd.DataFrame(
+            all_vals[1:], 
+            columns=all_vals[0]
+        )
+        csv_buffer = StringIO()
+        df.to_csv(csv_buffer)
+        d = datetime.today()
+        s3_resource.Object(
+            bucket, 
+            os.path.join(
+                parent_dir, f'{w.title}.csv')
+        ).put(
+            Body=csv_buffer.getvalue()
+        )
+        

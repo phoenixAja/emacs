@@ -1,0 +1,87 @@
+import numpy as np
+import pandas as pd
+
+
+
+def count_of_snps(mutation_data, metadata):
+    '''data cleaning and joining metadata onto mutation data group by mutation location '''
+    
+    mutation_data.dropna(axis=0, subset=["alt_base"], inplace=True)
+    mutation_data = mutation_data.query(""" alt_base != '*' """) 
+    
+    # get counts for grouping by loc
+    grouped_by_loc = mutation_data.groupby(
+        ['cell_id']
+    ).count()
+    
+    grouped_by_loc.reset_index(inplace=True)
+    
+    # join on metadata
+    grouped_by_loc_w_meta = grouped_by_loc.merge(
+        metadata, 
+        how="left", # get cell_ids that also are not in metadata and create "NA" category for tissue
+        on="cell_id",
+    )
+
+    # quick check here to make sure no data was dropped
+    print(abs(grouped_by_loc_w_meta.count() - grouped_by_loc.count()))
+    
+    return grouped_by_loc_w_meta
+
+
+def concat_coverage(coverage_files):
+    # concat all coverage data
+    return pd.concat(
+        coverage_files,
+        ignore_index=True
+    )
+    
+
+def merge_coverage_and_snp_counts(coverage, snp_counts):
+    return snp_counts.merge(
+        coverage, 
+        on="cell_id",
+    )
+
+
+def tissue_by_age_substitution_rate(mutation_data, metadata, coverage_files, tissue="all", cell_ontologies=False):
+    
+    # counts of mutations by cell with metadata
+    snp_counts = count_of_snps(mutation_data, metadata)
+    all_coverage = concat_coverage(coverage_files)
+    coverage_and_snps = merge_coverage_and_snp_counts(all_coverage, snp_counts)
+
+    groupings = ["tissue",  "age"]
+    if cell_ontologies:
+        groupings.append("cell_ontology_class")
+        
+    if tissue != "all":
+        coverage_and_snps = coverage_and_snps.query(f"tissue == '{tissue}'")
+        
+    #sum gets coverage
+    coverage_and_snps_sum = coverage_and_snps.groupby(
+        groupings
+    ).sum().reset_index()[
+        groupings + ["coverage"]
+    ].query("coverage != 0") # for now to take out ages that we don't have coverage for  
+
+    # count gets all snps
+    # NaN values are dropped from doing count(), just a note
+    coverage_and_snps_count = coverage_and_snps.groupby(
+        groupings
+    ).count().reset_index()[
+        groupings + ["cell_id"]
+    ]
+
+    coverage_snps_count_sum = coverage_and_snps_count.merge(
+        coverage_and_snps_sum,
+        how="left", # get cell_ids that also are not in coverage data to output later
+        on=groupings,
+    )
+
+    coverage_snps_count_sum["substitution_rate"] = coverage_snps_count_sum.apply(
+        lambda row: row["cell_id"] / row["coverage"],
+        axis=1
+    )
+
+    return coverage_snps_count_sum

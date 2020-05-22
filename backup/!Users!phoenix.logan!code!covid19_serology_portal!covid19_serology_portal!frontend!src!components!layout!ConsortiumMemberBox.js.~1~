@@ -1,0 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Box, Button } from '@material-ui/core';
+
+
+const ConsortiumMemberBox = function() {
+    return (
+      <Box>	    
+	 
+      </Box>	
+  );
+};
+
+export default Nav;

@@ -1,0 +1,26 @@
+import os
+import pytest
+import pandas as pd
+
+
+@pytest.fixture
+def TEST_DATA_BASE_DIR():
+    return "test_data"
+
+
+@pytest.fixture
+def TEST_DATA_INPUT_DIR(TEST_DATA_BASE_DIR):
+    return os.path.join(TEST_DATA_BASE_DIR, "input")
+
+
+@pytest.fixture
+def TEST_DATA_OUTPUT_DIR(TEST_DATA_BASE_DIR):
+    return "test_data"
+
+
+@pytest.fixture
+def test_mutations(TEST_DATA_DIR):
+    return pd.read_csv(os.path.join(TEST_DATA_DIR, "test_mutations.csv"))
+
+@pytest.fixture
+def test_metadata(TEST_DATA_DIR)

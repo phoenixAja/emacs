@@ -1,0 +1,46 @@
+# This is a combination of 5 commits.
+# This is the 1st commit message:
+
+cleaned up protocols routing
+
+# This is the commit message #2:
+
+changed url name back to accounts
+
+# This is the commit message #3:
+
+reverted back to template views
+
+# This is the commit message #4:
+
+consistant quotes
+
+# This is the commit message #5:
+
+removed api protocols dir
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 13 16:56:01 2020 -0700
+#
+# interactive rebase in progress; onto 2c349b5
+# Last commands done (5 commands done):
+#    squash f42d53c consistant quotes
+#    squash b4d76ae removed api protocols dir
+# No commands remaining.
+# You are currently rebasing branch 'add-protocols-list-to-app' on '2c349b5'.
+#
+# Changes to be committed:
+#	modified:   config/urls.py
+#	modified:   covid19_serology_portal/frontend/src/components/App.js
+#	renamed:    covid19_serology_portal/frontend/src/components/layout/Home.js -> covid19_serology_portal/frontend/src/components/pages/Home.js
+#	modified:   covid19_serology_portal/frontend/src/components/pages/ProtocolDetailView.js
+#	modified:   covid19_serology_portal/frontend/src/components/pages/ProtocolsListView.js
+#	deleted:    covid19_serology_portal/protocols/api/__init__.py
+#	deleted:    covid19_serology_portal/protocols/api/urls.py
+#	deleted:    covid19_serology_portal/protocols/api/views.py
+#	renamed:    covid19_serology_portal/protocols/api/serializers.py -> covid19_serology_portal/protocols/serializers.py
+#	modified:   covid19_serology_portal/protocols/urls.py
+#	modified:   covid19_serology_portal/protocols/views.py
+#

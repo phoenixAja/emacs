@@ -1,0 +1,132 @@
+import csv
+from enum import Enum
+import pathlib
+
+from qpcr_processing.config import processing_log
+from qpcr_processing.config import CONTROL_WELLS_FOLDER
+import qpcr_processing.google.drive as drive
+
+
+class ProcessingFrom(Enum):
+    local = 1
+    gdrive = 2
+
+
+class ControlWells:
+    def __init__(
+            self,
+            processing_from: Enum,
+            sample_plate_barcode: str = None,
+            service=None,
+            mapping_fp: str or pathlib.Path = None,
+    ):
+        self.sample_plate_barcode = sample_plate_barcode
+        self.mapping_fp = mapping_fp
+        self.processing_from = processing_from
+        self.mapping = self._get_mapping()
+
+    def _get_mapping(self):
+        """get control wells for validation or for standard run"""
+
+        if self.processing_from == ProcessingFrom.local:
+            if self.mapping_fp:
+                with open(self.mapping_fp, "r") as fh:
+                    return CustomControlWells(fh).mapping
+            else:
+                return self.fallback_mapping
+
+        elif self.processing_from == ProcessingFrom.gdrive:
+            try:
+                control_wells_fh = self.get_file_from_drive()
+                return CustomControlWells(control_wells_fh).mapping
+            except:
+                # either files in drive weren't found or service wasn't provided
+                return self.fallback_mapping
+
+        else:
+            raise NotImplementedError(
+                "processing from {self.processing_from} currently unsupported,"
+                "please choose either ProcessingFrom.local or ProcessingFrom.gdrive"
+            )
+
+    def get_file_from_drive(self):
+
+        folder_id = drive.get_folder_id_of_path(
+            self.service,
+            ['testing_qPCR_results', 'custom control wells']
+        )
+
+        finished_file_info = drive.find_file_by_search_terms(
+            self.service,
+            folder_id,
+            [self.sample_plate_barcode, ".csv"],
+        )
+
+        with drive.get_file(
+                self.service,
+                finished_file_info["id"],
+                binary=False
+        ) as fh:
+            yield fh
+
+    @property
+    def fallback_mapping(self):
+        if self.sample_plate_barcode:
+            if self.sample_plate_barcode.startswith("V", 0, 1):
+                return ValidationControlWells.mapping
+            else:
+                return StandardControlWells.mapping
+        else:
+            # all other cases fallback is standard mapping
+            return StandardControlWells.mapping
+
+
+class CustomControlWells:
+    def __init__(self, mapping_fh):
+        self.mapping_fh = mapping_fh
+
+    @property
+    def mapping(self):
+        return {
+            k.strip(): v.strip()
+            for k, v
+            in csv.reader(self.mapping_fh, delimiter=",")
+        }
+
+
+class ValidationControlWells:
+    mapping = {
+        "A1": "Water",
+        "B1": "Water",
+        "C1": "Water",
+        "D1": "Water",
+        "E1": "Water",
+        "F1": "Water",
+        "G1": "Water",
+        "H1": "Water",
+        "A12": "Water",
+        "B12": "Water",
+        "C12": "Water",
+        "D12": "Water",
+        "E12": "Water",
+        "F12": "Water",
+        "G12": "Water",
+        "H12": "Water",
+    }
+
+
+class StandardControlWells:
+    mapping = {
+        "A1": "Water",
+        "A11": "Water",
+        "A12": "Water",
+        "H1": "Water",
+        "H11": "Water",
+        "H12": "Water",
+        "A8": "PC",
+        "H8": "PC",
+        "A9": "HSC",
+        "H9": "HSC",
+        "A10": "UTM",
+        "H10": "UTM",
+    }

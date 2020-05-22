@@ -1,0 +1,109 @@
+# This is a combination of 17 commits.
+# This is the 1st commit message:
+
+added viral background image
+
+# This is the commit message #2:
+
+package.json and webpack config
+
+# This is the commit message #3:
+
+added css/sass loader packages to package.json
+
+# This is the commit message #4:
+
+modified webpack config for sass loaders
+
+# This is the commit message #5:
+
+webpack file with sass loader
+
+# This is the commit message #6:
+
+webpack config with css/sass loaders working
+
+# This is the commit message #7:
+
+trying to import scss
+
+# This is the commit message #8:
+
+Delete project.css
+# This is the commit message #9:
+
+package lock
+
+# This is the commit message #10:
+
+new dependency versions
+
+# This is the commit message #11:
+
+mincss plugin dependency
+
+# This is the commit message #12:
+
+added in Marks component/styling
+
+# This is the commit message #13:
+
+small changes
+
+# This is the commit message #14:
+
+fixed styling imports
+
+# This is the commit message #15:
+
+img loader
+
+# This is the commit message #16:
+
+background image display with text decoration
+
+# This is the commit message #17:
+
+final tweaks
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu Apr 30 10:05:00 2020 -0700
+#
+# interactive rebase in progress; onto 41f0b81
+# Last commands done (17 commands done):
+#    squash 6e91e60 background image display with text decoration
+#    squash 2060999 final tweaks
+# No commands remaining.
+# You are currently rebasing branch 'banner-component' on '41f0b81'.
+#
+# Changes to be committed:
+#	new file:   covid19_serology_portal/frontend/src/components/App.js
+#	new file:   covid19_serology_portal/frontend/src/components/layout/Banner.js
+#	new file:   covid19_serology_portal/frontend/src/components/layout/assets/images/Hero.png
+#	new file:   covid19_serology_portal/frontend/src/components/layout/assets/images/viral_background.png
+#	new file:   covid19_serology_portal/frontend/src/components/layout/banner.scss
+#	new file:   covid19_serology_portal/frontend/src/components/layout/viral_background.png
+#	new file:   covid19_serology_portal/frontend/src/index.js
+#	deleted:    covid19_serology_portal/static/css/project.css
+#	modified:   covid19_serology_portal/templates/base.html
+#	new file:   package-lock.json
+#	new file:   package.json
+#	new file:   webpack.config.js
+#
+# Untracked files:
+#	.babelrc
+#	.ebextensions/
+#	.idea/
+#	config/settings/base_config.yml
+#	covid19_serology_portal/frontend/src/components/layout/assets/fonts/
+#	covid19_serology_portal/static/25a65f09eec4637d9e28132dc228c76c.png
+#	covid19_serology_portal/static/frontend/
+#	covid19_serology_portal/static/images/layout/
+#	covid19_serology_portal/static/images/partner_logos/UCSF_sig_black_RGB.jpg
+#	covid19_serology_portal/static/img/
+#	covid19_serology_portal/static/viral_background.png
+#	covid19_serology_portal/templates/pages/index.html
+#	troubleshoot/
+#

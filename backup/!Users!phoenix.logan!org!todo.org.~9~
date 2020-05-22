@@ -1,0 +1,142 @@
+* Tasks
+** DONE [#A] Research Options for Madrone front end 
+   CLOSED: [2020-01-09 Thu 14:37]
+Look into pathogenwatch/microreact and auspice/nextstrain for potential front end replacements for madrone
+SCHEDULED: <2020-01-09 Thu>
+** DONE [#A] Setup email for spid nextflow pipeline [100%]
+   CLOSED: [2020-01-21 Tue 14:18] SCHEDULED: <2020-01-15 Wed>
+*** DONE Contact Jason to add instance ips to email whitelist
+    CLOSED: [2020-01-09 Thu 11:00]
+Added, but still no luck testing with telnet, maybe system takes longer to update
+Jason on Vacation until Tuesday, so this wight need to be put on hold
+*** DONE Add in email settings to nextflow config
+    CLOSED: [2020-01-09 Thu 14:37]
+*** DONE Test to see if pipeline properly sends email:
+    CLOSED: [2020-01-17 Fri 13:01]
+Pipeline will send email with mail backend on tesla (from account@tesla.czbiohub.org), still 
+working on setup with smtp server 
+*** DONE Get working with smtp gmail backend
+    CLOSED: [2020-01-21 Tue 14:18]
+resolved for now with tesla email, instead of sending madrone@czbiohub email from tesla 
+configure small instance as mail-forwarder and give that ip to Jason for the whitelist.
+(todo at later time point)
+** DONE [#A] Add AWS batch option to nf-spid [100%]
+   CLOSED: [2020-01-17 Fri 09:34] SCHEDULED: <2020-01-10 Fri>
+*** DONE Look into if we need to re-build batch
+    CLOSED: [2020-01-09 Thu 10:58]
+we can use the default queue.
+*** DONE Write batch code in nextflow config
+    CLOSED: [2020-01-09 Thu 14:37]
+*** DONE Build test dataset for nf-spid
+    CLOSED: [2020-01-17 Fri 13:01]
+*** DONE Test batch code
+    CLOSED: [2020-01-17 Fri 13:01]
+** DONE [#A] Merge Dev into Master for kmermaid
+   CLOSED: [2020-01-17 Fri 09:35]
+prerequisite for getting the ska branch merged in
+   SCHEDULED: <2020-01-14 Tue>
+
+** TODO [#A] SBT localization
+   :LOGBOOK:
+   CLOCK: [2020-01-30 Thu 10:03]
+   :END:
+finish kmer index sbt localization for sourmash PR, (bonus to get this done quickly to have presentation for cold springs harbor?)
+   SCHEDULED: <2020-02-04 Tue>
+** DONE [#A] Front End Pair Program Madrone
+   CLOSED: [2020-01-17 Fri 09:34]
+Work with David to export Tree feature to Madrone Front end to see how easy front end migration would be.
+   SCHEDULED: <2020-01-14 Tue>
+** DONE [#A] EHR SQL 
+   CLOSED: [2020-01-17 Fri 09:34]
+Work with Lucy to generate SQL Query for EHR Data that can be re-usable for future SQL Pulls
+   SCHEDULED: <2020-01-14 Tue>
+** TODO [#A] Imaging DB Datasync
+Work with Saransh to get datasync working with the imagingDB local/AWS backup
+   SCHEDULED: <2020-01-30 Thu>
+** DONE [#A] Finish merging kmermaid ska branch to master
+   CLOSED: [2020-01-29 Wed 11:21]
+Some test is failing
+   SCHEDULED: <2020-01-28 Tue>
+** DONE [#A] Read Pipeline paper for SPID
+   CLOSED: [2020-01-29 Wed 14:23]
+Check in with Jack about SPID pipeline paper and read paper before meeting Thursday
+   SCHEDULED: <2020-01-30 Thu>
+** DONE [#A] Read Fluent Python Chapter 7 (function decorators and closures)
+   CLOSED: [2020-02-04 Tue 14:17]
+Read before going over with Aaron on Thursday 
+   SCHEDULED: <2020-01-22 Wed>
+** DONE [#A] Write Madrone Front-end Intern Description
+Write preliminary notes/description for front end intern
+   SCHEDULED: <2020-01-21 Tue>
+   CLOSED: [2020-01-21 Tue 14:21]
+** DONE [#A] Review nf-spid PR
+   CLOSED: [2020-01-23 Thu 11:48]
+Sam submitted PR for single and paired end reads. 
+   SCHEDULED: <2020-01-23 Thu>
+** DONE [#A] Meet with Lincoln to troubleshoot multiprocessing errors [100%]
+   CLOSED: [2020-02-04 Tue 14:17]
+*** DONE [#A] Familiarize myself with problem in 1:1 meeting
+    CLOSED: [2020-01-27 Mon 11:50]
+*** DONE [#A] Give opinion on Pathos MP Lib
+   CLOSED: [2020-01-29 Wed 14:23] SCHEDULED: <2020-01-23 Thu>
+   :LOGBOOK:
+   CLOCK: [2020-01-29 Wed 16:57]--[2020-01-29 Wed 16:57] =>  0:00
+   :END:
+** TODO [#A] Encrypt old laptop for UCSF 
+Lucy sent instructions on how to do this on slack
+   SCHEDULED: <2020-01-29 Wed>
+** DONE [#A] Ask permission from Jim to go to Nf-core hackathon
+   CLOSED: [2020-01-29 Wed 11:21]
+Get dates and tell him that i can share room with Olga
+   SCHEDULED: <2020-01-27 Mon>
+** DONE [#A] Fix nf-spid travis issues
+   CLOSED: [2020-01-29 Wed 11:21]
+currently can't find docker container so rebuild and fix branch
+   SCHEDULED: <2020-01-27 Mon>
+** DONE [#A] Clean up lrrr nextflow containers
+   CLOSED: [2020-02-04 Tue 14:17]
+nextflow is littering a ton of containers from finished jobs, olga and i need to remove them all 
+   SCHEDULED: <2020-01-30 Thu>
+** DONE [#A] add new labels onto skeeters clustermap
+   CLOSED: [2020-02-04 Tue 14:17] SCHEDULED: <2020-02-04 Tue>
+** DONE [#A] write species assignment output DF with new index
+   CLOSED: [2020-02-11 Tue 11:09] SCHEDULED: <2020-02-05 Wed>
+** DONE [#A] Add in goto source code in jupyterlab
+   CLOSED: [2020-02-11 Tue 11:09] SCHEDULED: <2020-02-05 Wed>
+** DONE [#A] Scanpy intro with Olga
+   CLOSED: [2020-02-19 Wed 10:06] SCHEDULED: <2020-02-11 Tue>
+** TODO [#A] Download SPID benchmarking data and place on pure storage
+   SCHEDULED: <2020-02-24 Mon>
+** DONE [#A] Read ID theory papers 
+   CLOSED: [2020-02-19 Wed 10:06] SCHEDULED: <2020-02-12 Wed>
+** DONE [#A] Read Joss paper on django app
+   CLOSED: [2020-02-19 Wed 10:06] SCHEDULED: <2020-02-19 Wed>
+** DONE [#A] Unregister for NF-Core Hackathon
+   CLOSED: [2020-02-19 Wed 10:13] SCHEDULED: <2020-02-19 Wed>
+** DONE [#A] Finish Single cell analysis for mouse lemur lung cross species
+   CLOSED: [2020-02-20 Thu 09:55] SCHEDULED: <2020-02-19 Wed>
+** DONE [#A] Single cell analysis for Mouse Lemur cross species lung dataset
+   CLOSED: [2020-02-20 Thu 09:56]
+apply batch correction for species and rank marker genes across species for cell 
+types specific to the lung.
+   SCHEDULED: <2020-02-19 Wed>
+** TODO [#A] start prep work on sbt localization [25%]
+*** DONE update repo to fetch upstream
+    CLOSED: [2020-02-20 Thu 10:07]
+*** TODO put together strategy 
+*** TODO make sure test is a good use case
+*** TODO look at nodegraph and understand filtering
+    
+   SCHEDULED: <2020-02-20 Thu>
+** TODO [#A] Xor filters prepare [0%]
+*** TODO Read Paper
+*** TODO Make Presentation
+   SCHEDULED: <2020-02-21 Fri>
+** TODO [#A] Make process for nf-predictorthologs pipeline
+   Olga wants a process that takes a bam and bed file that takes an intersection and for each 
+   intersection will output a fastq file that will be used for the next step in the pipeline
+   SCHEDULED: <2020-02-21 Fri>
+** TODO [#A] Look into pyro library to get a feel for replacing Lucy's MCMC algorithm with 
+look into if you could supply custom likelihood estimator for phylogenetics for MCMC. Other 
+libraries that might be helpful include pyMC2, pytorch, stan
+   SCHEDULED: <2020-02-21 Fri>

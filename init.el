@@ -21,16 +21,13 @@
   :config
   (exec-path-from-shell-initialize))
 
-
 (use-package company
-  :init (global-company-mode)
   :config
-  (progn
-    ;; (bind-key (kbd "C-TAB") #'company-complete company-mode-map)
-    (add-to-list 'company-backends 'company-irony 'company-jedi)
-    (setq jedi:setup-keys t)
-    (setq jedi:complete-on-dot t)
-    (add-hook 'python-mode-hook 'jedi:setup)))
+  (setq company-idle-delay 0.3)
+
+  (global-company-mode 1)
+
+  (global-set-key (kbd "C-<tab>") 'company-complete))
 
 (use-package ob-async
   :ensure t)

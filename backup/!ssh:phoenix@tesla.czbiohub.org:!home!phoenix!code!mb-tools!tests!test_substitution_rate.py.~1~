@@ -1,0 +1,25 @@
+import pytest
+from mbtools.tissue_by_age_substitution_rate
+
+
+def test_tissue_by_age_substitution_rate_all_tissue(
+        teset_mutations_input,
+        test_metadata_input,
+        test_coverage,
+        substitution_rate_all_correct
+):
+    results = tissue_by_age_substitution_rate(test_mutations_input, test_metadata_input, test_coverage)
+
+    assert(results.equals(substitution_rate_all_correct))
+
+
+def test_tissue_by_age_substitution_rate_thymus(
+        teset_mutations_input,
+        test_metadata_input,
+        test_coverage,
+        substitution_rate_thymus_correct
+):
+    """test cell ontology breakdown"""
+    
+    results = tissue_by_age_substitution_rate(test_mutations_input, test_metadata_input, test_coverage)
+    assert(results.equals(substitution_rate_thymus_correct))

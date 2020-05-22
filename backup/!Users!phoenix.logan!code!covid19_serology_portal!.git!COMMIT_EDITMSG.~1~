@@ -1,0 +1,39 @@
+adding in react fronten
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Fri Apr 24 11:33:58 2020 -0700
+#
+# On branch rest-front-end
+# Your branch is ahead of 'origin/rest-front-end' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   config/urls.py
+#	new file:   covid19_serology_portal/frontend/src/actions/protocols.js
+#	new file:   covid19_serology_portal/frontend/src/actions/types.js
+#	new file:   covid19_serology_portal/frontend/src/components/App.js
+#	new file:   covid19_serology_portal/frontend/src/components/protocols/Dashboard.js
+#	new file:   covid19_serology_portal/frontend/src/components/protocols/ProtocolList.js
+#	new file:   covid19_serology_portal/frontend/src/index.js
+#	new file:   covid19_serology_portal/frontend/src/reducers/index.js
+#	new file:   covid19_serology_portal/frontend/src/reducers/protocols.js
+#	new file:   covid19_serology_portal/frontend/src/store.js
+#	modified:   covid19_serology_portal/frontend/views.py
+#	modified:   covid19_serology_portal/protocols/urls.py
+#	new file:   covid19_serology_portal/static/frontend/main.js
+#	new file:   covid19_serology_portal/templates/pages/index.html
+#	new file:   package-lock.json
+#	new file:   package.json
+#	new file:   webpack.config.js
+#
+# Untracked files:
+#	.babelrc
+#	.ebextensions/
+#	.idea/
+#	config/settings/base_config.yml
+#	covid19_serology_portal/frontend/templates/
+#	covid19_serology_portal/static/images/partner_logos/UCSF_sig_black_RGB.jpg
+#	troubleshoot/
+#
